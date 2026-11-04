@@ -1,5 +1,12 @@
 # Histórico
 
+## 0.3.1 — 2026-11-04
+
+- Corrigida a substituição indevida da lista da 0.2: DirectX, NVIDIA DirectX e NVIDIA OpenGL voltam junto às cinco limpezas da 0.3.
+- Oito opções acumuladas, em dois grupos, com a mesma seleção, confirmação e relatório. Caches de shaders usam o executor existente e os destinos fixos anteriores.
+- Aviso de recompilação de shaders e possibilidade de engasgos nas primeiras partidas.
+- 59 testes executados: 58 aprovados, um ignorado por bloqueio na criação de junction; nenhuma limpeza dos dados reais do usuário.
+
 ## 0.3.0 — 2026-11-04
 
 - Cinco opções de limpeza do sistema: temporários, Prefetch, Lixeira, downloads do Windows Update e miniaturas.

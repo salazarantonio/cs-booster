@@ -5,7 +5,7 @@ import { readFileSync } from 'node:fs';
 
 const source = readFileSync(new URL('../renderer/app.js', import.meta.url), 'utf8');
 const cleanupSource = source.slice(source.indexOf('const cleanupDefinitions'), source.indexOf('async function games()'));
-const ids = ['temp','prefetch','recyclebin','windows-update','thumbnails'];
+const ids = ['directx','nvidia-dx','nvidia-gl','temp','prefetch','recyclebin','windows-update','thumbnails'];
 
 // Execute the actual renderer event handler with a minimal DOM adapter, not a
 // second implementation of its confirmation rules. All backend calls are fakes.
@@ -41,15 +41,28 @@ async function fixture({confirmations=[],result,unsupported=[],reasons={}}={}) {
   return {elements,inputs,calls,prompts,toasts,select,click:()=>elements.get('#clean').onclick()};
 }
 
-test('cleanup starts with exactly five canonical options, no preselection and disabled execution', async()=>{
+test('cleanup starts with all eight accumulated options, no preselection and disabled execution', async()=>{
   const f=await fixture();
   const markup=f.elements.get('#content').innerHTML;
   const tags=[...markup.matchAll(/<input\b[^>]*class="cleanup-switch"[^>]*>/g)].map(match=>match[0]);
-  assert.equal(tags.length,5);
+  assert.equal(tags.length,8);
   assert.ok(tags.every(tag=>! /\bchecked\b/.test(tag)));
   assert.match(markup,/<button[^>]*id="clean"[^>]*disabled/);
   assert.equal(f.elements.get('#clean').disabled,true);
   assert.deepEqual(f.calls,[]);
+  assert.match(markup,/Caches de jogos e drivers/);
+  assert.match(markup,/Limpeza do sistema/);
+  for(const title of ['Cache DirectX','Cache NVIDIA DirectX','Cache NVIDIA OpenGL','Limpar arquivos temporários','Limpar arquivos Prefetch','Esvaziar Lixeira','Limpar cache do Windows Update','Limpar cache de miniaturas'])assert.ok(markup.includes(title));
+});
+
+test('shader caches and system cleanup share the same selection and warn about recompilation',async()=>{
+  const f=await fixture({confirmations:[true]});
+  f.select('directx','nvidia-dx','nvidia-gl','temp');await f.click();
+  assert.equal(f.calls.length,1);
+  assert.deepEqual(Array.from(f.calls[0].ids),['directx','nvidia-dx','nvidia-gl','temp']);
+  assert.match(f.prompts[0].text,/shaders serão recompilados/);
+  assert.equal(f.calls[0].confirmRecycleBin,undefined);
+  for(const name of ['Cache DirectX','Cache NVIDIA DirectX','Cache NVIDIA OpenGL','Limpar arquivos temporários'])assert.ok(f.elements.get('#cleanup-report-items').innerHTML.includes(name));
 });
 
 test('cancelling permanent deletion never calls the backend', async()=>{

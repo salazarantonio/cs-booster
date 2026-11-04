@@ -1,6 +1,6 @@
 {
   "name": "cs-booster",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "private": true,
   "description": "Otimizador e diagnóstico Windows para jogos competitivos",
   "type": "module",

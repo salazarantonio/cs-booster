@@ -29,7 +29,7 @@ try {
     if(!state.heading||state.overflow||state.text.includes('Não foi possível carregar'))throw new Error('Route failed: '+route+' '+JSON.stringify(state));
     if(route==='cleanup') {
       const cleanupState=await run(`({count:document.querySelectorAll('.cleanup-switch').length,checked:document.querySelectorAll('.cleanup-switch:checked').length,disabled:document.querySelector('#clean')?.disabled})`);
-      if(cleanupState.count!==5||cleanupState.checked!==0||cleanupState.disabled!==true)throw new Error('Invalid cleanup default state: '+JSON.stringify(cleanupState));
+      if(cleanupState.count!==8||cleanupState.checked!==0||cleanupState.disabled!==true)throw new Error('Invalid cleanup default state: '+JSON.stringify(cleanupState));
     }
     results.push({route,heading:state.heading});
     if(route==='dashboard'||route==='tweaks'||route==='security') await fs.writeFile(path.join(root,'evidence',route+'.png'),(await win.webContents.capturePage()).toPNG());
