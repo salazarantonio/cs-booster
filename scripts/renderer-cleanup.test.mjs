@@ -4,7 +4,7 @@ import vm from 'node:vm';
 import { readFileSync } from 'node:fs';
 
 const source = readFileSync(new URL('../renderer/app.js', import.meta.url), 'utf8');
-const cleanupSource = source.slice(source.indexOf('const cleanupDefinitions'), source.indexOf('async function games()'));
+const cleanupSource = source.slice(source.indexOf('const cleanupDefinitions'), source.indexOf('async function games('));
 const ids = ['directx','nvidia-dx','nvidia-gl','temp','prefetch','recyclebin','windows-update','thumbnails'];
 
 // Execute the actual renderer event handler with a minimal DOM adapter, not a
@@ -22,7 +22,8 @@ async function fixture({confirmations=[],result,unsupported=[],reasons={}}={}) {
     model:{page:'cleanup'},
     $:selector=>elements.get(selector),
     escape:value=>String(value??'').replaceAll('<','&lt;').replaceAll('>','&gt;'),
-    head:()=>'',notice:text=>String(text),detailed:()=>'',
+    head:()=>'',notice:text=>String(text),detailed:()=>'',pageCheck:()=>()=>true,
+    callBridge:(method,input)=>sandbox.window.booster[method](input),
     api:async method=>{
       assert.equal(method,'getCleanupPreview');
       return {items:ids.map(id=>({id,supported:!unsupported.includes(id),reason:reasons[id],bytes:4096})),lastCleanupAt:null};

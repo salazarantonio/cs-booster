@@ -1,6 +1,6 @@
 # CS Booster
 
-Aplicativo desktop Windows para diagnóstico e ajustes individuais voltados a jogos competitivos. Versão de desenvolvimento 0.3.1.
+Aplicativo desktop Windows para diagnóstico e ajustes individuais voltados a jogos competitivos. Versão de desenvolvimento 0.3.2.
 
 ## Estado atual
 
@@ -91,3 +91,14 @@ A inicialização também registra etapas em `release/CS Booster/resources/app/d
 O bloqueio da entrada ESM ao aguardar prontidão foi corrigido: o módulo principal agora termina de carregar antes da criação assíncrona da janela. Para validar a interface com registro e PowerShell simulados pelo Windows normal, use `Validar interface.cmd`. Esse teste não executa otimizações reais e recusa relatórios antigos como prova de sucesso.
 
 Validação desktop concluída para abertura e interface: nove módulos, 29 ajustes no catálogo, oito opções de limpeza, filtros, cancelamentos, isolamento e comparação por IPC. O relatório confirmou zero escritas de registro e zero execuções de limpeza. A próxima etapa são operações reais em Windows de testes, com aplicação e restauração verificadas.
+
+
+## Navegação na 0.3.2
+
+A tela global de carregamento foi removida das trocas de módulo. Telas recentes e consultas são reaproveitadas em memória por até dez segundos. Consultas em andamento são compartilhadas; alterações e atualização explícita invalidam o cache. Uma consulta real ainda pode levar tempo na primeira visita ou após a expiração, mas a estrutura do módulo fica visível e as ações permanecem bloqueadas até a verificação.
+
+A leitura dos estados passou de nove processos PowerShell para uma consulta agrupada. O painel consulta dados independentes em paralelo e módulos de orientação não consultam estados desnecessários. Os oito recursos de limpeza foram preservados.
+
+A [comparação com o TogsBoost](NAVIGATION-ANALYSIS.md) apresenta os trechos examinados com REA, a tentativa de Ghidra e os limites da conclusão. A suíte atual tem 84 testes: 83 aprovados e uma omissão conhecida. A prévia da 0.3.2 foi conferida; a aprovação desktop da 0.3.1 permanece histórica e não substitui um novo relatório da 0.3.2.
+
+Validação desktop da 0.3.2 aprovada: retorno recente sem consultas extras, formulário preservado e atualização explícita verificados com adaptadores simulados. Nenhuma alteração real do Windows foi executada.

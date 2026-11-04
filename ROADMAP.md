@@ -45,3 +45,6 @@ As quatro recomendações ainda pendentes são **plano de energia máximo, Copil
 Os outros 18 ajustes pendentes são: BSOD detalhado; apps Store em segundo plano; isolamento do núcleo; proteção em tempo real do Defender; inicialização rápida; localização; dicas da tela de bloqueio; Wi-Fi Sense; HAGS; otimização de jogos em janela; rede; NVIDIA; remoção de apps de jogos como ação própria; OneDrive; utilitário Limpeza de Disco; PowerShell 7 padrão; UTC; prioridade Win32. A presença no catálogo não significa que estejam disponíveis ou recomendados para toda máquina.
 
 Ordem sugerida: validar aplicação e restauração reais em Windows de testes (abertura e interface já aprovadas); implementar as quatro recomendações restantes com recuperação do estado anterior; concluir Steam/CS2 e shaders; ampliar diagnóstico e distribuição. A comparação de FPS depende de medições repetidas e não é substituída por uma indicação de ajuste ativo.
+
+
+Na 0.3.2, a navegação ganhou cache temporário e eliminação de consultas repetidas. A prévia e os testes de lógica passaram; falta confirmar o novo teste desktop no Windows normal. Isso não substitui a etapa seguinte de aplicação/restauração reais em Windows de testes.

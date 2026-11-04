@@ -1,5 +1,15 @@
 # Histórico
 
+## 0.3.2 — 2026-11-04
+
+- Troca de módulos sem tela global de carregamento; reaproveitamento de telas recentes e consultas em memória, sem persistência de cache.
+- Consultas simultâneas deduplicadas, invalidação após operações e atualização explícita; respostas antigas não substituem o módulo atual.
+- Estado e controles preservados em telas recentes; ações bloqueadas durante consultas de atualização.
+- Nove leituras do registro agrupadas em um PowerShell; consultas independentes em paralelo e estados consultados apenas quando necessários.
+- Oito limpezas preservadas. 84 testes de lógica/fixtures: 83 aprovados e uma omissão conhecida; prévia conferida.
+- Interface desktop 0.3.2 aprovada: retorno sem novas consultas, formulário preservado, atualização explícita, nove módulos e oito limpezas; adaptadores simulados e zero mudanças reais. Aviso de captura da janela oculta registrado separadamente.
+- Comparação estática com REA documentada. Ghidra iniciou a análise nativa, mas atingiu o prazo de 900 segundos; nenhuma decompilação completa foi alegada.
+
 ## Validação da 0.3.1 — 2026-11-04
 
 - Corrigido o empacotamento repetido para montar uma pasta nova, preservar dados e arquivar o pacote anterior; teste de recuperação após falha de publicação.

@@ -56,3 +56,14 @@ O mesmo padrão foi removido do ponto de entrada do teste de interface. A refer�
 ## Resultado consolidado da etapa
 
 A abertura e a interface da versão 0.3.1 foram aprovadas. A correção da espera circular no módulo ESM resolveu o bloqueio observado na abertura manual. Os registros agora chegam à página carregada e a janela foi confirmada pelo usuário. O teste funcional com adaptadores simulados passou sem executar mudanças reais. O erro nativo observado no ambiente automatizado não impediu a validação pelo Windows normal e permanece uma limitação daquele contexto de execução.
+
+
+## Revisão 0.3.2 — navegação
+
+Esta revisão acrescenta cache temporário de consultas e de telas, proteção contra respostas antigas, atualização explícita e leituras de registro agrupadas. Resultado da suíte: 84 testes, 83 aprovados e uma omissão de junction. A prévia confirmou retorno a módulo recente, campo preservado e ausência da tela global de carregamento.
+
+A consistência do pacote 0.3.2 foi conferida: 73 arquivos do runtime e 22 arquivos da aplicação. O teste desktop foi ampliado para exigir retorno sem novas consultas e preservação de formulário. A execução desse teste no Windows normal foi aprovada em um relatório novo da versão 0.3.2. Consulte NAVIGATION-ANALYSIS.md para o estudo com REA e os limites da análise nativa com Ghidra.
+
+A primeira tentativa desktop da 0.3.2 encerrou com `UnknownVizError`, sem etapa registrada. O teste foi ajustado para registrar a etapa e separar falhas de captura de imagem da janela oculta das verificações funcionais, que continuam obrigatórias. Avisos de captura são incluídos no relatório. A nova execução foi aprovada, com o aviso de captura registrado; o relatório 0.3.1 permanece histórico.
+
+O relatório desktop novo da versão 0.3.2, de 04/11/2026 às 19:02 (Fortaleza), aprovou nove módulos, 29 ajustes e oito opções de limpeza. O retorno a telas recentes repetiu zero consultas, preservou o campo de edição e a atualização explícita consultou dados novos. Filtros, cancelamentos, isolamento e IPC passaram com adaptadores simulados; zero escritas no registro e zero execuções de limpeza. A captura do painel oculto registrou UnknownVizError, separadamente das verificações funcionais aprovadas. Não houve validação de alterações reais no Windows nem medição de ganho de FPS.

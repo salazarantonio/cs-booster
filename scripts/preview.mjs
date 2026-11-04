@@ -7,7 +7,7 @@ const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const service=createService(path.join(root,'data-preview'));
 const allowed=['getDashboard','getCatalog','getSettings','getTweakStates','listBackups','getCleanupPreview','getSteamInfo','getMitigationStatus','getLogs','getDebloatApps','listMitigationBackups'];
 const bridge=`window.booster=Object.fromEntries(${JSON.stringify(allowed)}.map(name=>[name,async()=>{const r=await fetch('/api/'+name);const data=await r.json();if(!r.ok)throw new Error(data.error||'Consulta indisponível');return data}]));for(const name of ['setSettings','applyTweak','restoreBackup','cleanCaches','planMitigation','compareCaptures','applyDebloat','applyMitigation','restoreMitigation'])window.booster[name]=async()=>{throw new Error('Use o aplicativo desktop para este recurso. A prévia é somente leitura.')};`;
-const files={'/':'index.html','/styles.css':'styles.css','/app.js':'app.js'};
+const files={'/':'index.html','/styles.css':'styles.css','/app.js':'app.js','/navigation.js':'navigation.js'};
 http.createServer(async(req,res)=>{
   res.setHeader('X-Content-Type-Options','nosniff');
   res.setHeader('Cache-Control','no-store');
