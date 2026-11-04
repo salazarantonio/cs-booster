@@ -5,7 +5,7 @@ import { createService } from './lib/service.mjs';
 
 const root = path.dirname(fileURLToPath(import.meta.url));
 const page = pathToFileURL(path.join(root, 'renderer/index.html')).href;
-const methods = ['getDashboard','getCatalog','getSettings','setSettings','getTweakStates','applyTweak','listBackups','restoreBackup','getCleanupPreview','cleanCaches','getSteamInfo','getMitigationStatus','planMitigation','compareCaptures','getLogs'];
+const methods = ['getDashboard','getCatalog','getSettings','setSettings','getTweakStates','applyTweak','listBackups','restoreBackup','getCleanupPreview','cleanCaches','getSteamInfo','getMitigationStatus','planMitigation','compareCaptures','getLogs','getDebloatApps','applyDebloat','applyMitigation','listMitigationBackups','restoreMitigation'];
 const single = app.requestSingleInstanceLock();
 let window;
 if (!single) app.quit();

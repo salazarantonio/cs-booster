@@ -4,8 +4,9 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createService } from '../lib/service.mjs';
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
-const qa=path.resolve(root,'../../work/qa');
+const qa=path.resolve(root,'data','qa');
 await fs.mkdir(qa,{recursive:true});
+await fs.mkdir(path.join(root,'evidence'),{recursive:true});
 app.setPath('userData',path.join(qa,'electron'));
 await app.whenReady();
 let writes=0;
@@ -30,8 +31,9 @@ try {
     if(route==='dashboard'||route==='tweaks'||route==='security') await fs.writeFile(path.join(root,'evidence',route+'.png'),(await win.webContents.capturePage()).toPNG());
   }
   await run(`location.hash='tweaks'`);await sleep(200);
-  const count=await run(`document.querySelectorAll('[data-tweak]').length`);
+  const count=await run(`document.querySelectorAll('#tweak-list .card').length`);
   if(count!==29)throw new Error('Expected 29 tweaks, found '+count);
+  if(await run(`document.querySelectorAll('.recommend-star').length`)!==6)throw new Error('Expected six recommended stars');
   await run(`document.querySelector('#search').value='Modo Escuro';document.querySelector('#search').dispatchEvent(new Event('input'))`);
   if(await run(`document.querySelectorAll('[data-tweak]').length`)!==1)throw new Error('Search filter failed');
   await run(`document.querySelector('[data-tweak]').click()`);await sleep(100);

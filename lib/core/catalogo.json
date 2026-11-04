@@ -11,7 +11,8 @@
       "declaredReversible": true,
       "evidence": "resources/tweaks/align-taskbar-left/meta.json",
       "implementationVerified": false,
-      "details": "Forces the Windows taskbar to align left by editing the system registry. by setting the 'TaskbarAl' registry value to 0"
+      "details": "Forces the Windows taskbar to align left by editing the system registry. by setting the 'TaskbarAl' registry value to 0",
+      "recommended": false
     },
     {
       "id": "debloat-windows",
@@ -24,7 +25,8 @@
       "declaredReversible": false,
       "evidence": "resources/tweaks/debloat-windows/meta.json",
       "implementationVerified": false,
-      "details": "The user can choose between two methods to debloat Windows:\n\n 1. TogsBoost Custom Selective Script: This method allows users to select which apps they want to keep. A WPF Window is presented where users can check or uncheck apps from a list.\n\n 2. Raphire's Win11Debloat Script: This method uses a well-known script that removes a wide range of built-in Windows apps and features. It is comprehensive and suitable for users who want a quick and effective way to debloat their system.\n\n Both remove bloatware and improve privacy by removing unnecessary Microsoft components, but they cater to different user preferences regarding control and convenience."
+      "details": "The user can choose between two methods to debloat Windows:\n\n 1. TogsBoost Custom Selective Script: This method allows users to select which apps they want to keep. A WPF Window is presented where users can check or uncheck apps from a list.\n\n 2. Raphire's Win11Debloat Script: This method uses a well-known script that removes a wide range of built-in Windows apps and features. It is comprehensive and suitable for users who want a quick and effective way to debloat their system.\n\n Both remove bloatware and improve privacy by removing unnecessary Microsoft components, but they cater to different user preferences regarding control and convenience.",
+      "recommended": true
     },
     {
       "id": "detailed-bsod",
@@ -36,7 +38,8 @@
       "declaredReversible": true,
       "evidence": "resources/tweaks/detailed-bsod/meta.json",
       "implementationVerified": false,
-      "details": "Enables detailed technical information on the Blue Screen of Death by setting DisplayParameters to 1 in the CrashControl registry."
+      "details": "Enables detailed technical information on the Blue Screen of Death by setting DisplayParameters to 1 in the CrashControl registry.",
+      "recommended": false
     },
     {
       "id": "disable-background-ms-store-apps",
@@ -49,7 +52,8 @@
       "declaredReversible": true,
       "evidence": "resources/tweaks/disable-background-ms-store-apps/meta.json",
       "implementationVerified": false,
-      "details": "Disables all background activity for modern UWP apps by setting 'GlobalUserDisabled' to 1 under the current user's BackgroundAccessApplications registry key, creating the key if it doesn't exist."
+      "details": "Disables all background activity for modern UWP apps by setting 'GlobalUserDisabled' to 1 under the current user's BackgroundAccessApplications registry key, creating the key if it doesn't exist.",
+      "recommended": false
     },
     {
       "id": "disable-copilot",
@@ -62,7 +66,8 @@
       "declaredReversible": true,
       "evidence": "resources/tweaks/disable-copilot/meta.json",
       "implementationVerified": false,
-      "details": "Finds and removes all installed Microsoft Copilot-related AppX packages for all users by filtering package names with 'Microsoft.Copilot'"
+      "details": "Finds and removes all installed Microsoft Copilot-related AppX packages for all users by filtering package names with 'Microsoft.Copilot'",
+      "recommended": true
     },
     {
       "id": "disable-core-isolation",
@@ -75,7 +80,8 @@
       "declaredReversible": true,
       "evidence": "resources/tweaks/disable-core-isolation/meta.json",
       "implementationVerified": false,
-      "details": "Creates the registry path for Hypervisor-Enforced Code Integrity under DeviceGuard if missing, and disables HVCI by setting Enabled to 0 in the system-wide registry."
+      "details": "Creates the registry path for Hypervisor-Enforced Code Integrity under DeviceGuard if missing, and disables HVCI by setting Enabled to 0 in the system-wide registry.",
+      "recommended": false
     },
     {
       "id": "disable-defender-rtp",
@@ -88,7 +94,8 @@
       "declaredReversible": true,
       "evidence": "resources/tweaks/disable-defender-rtp/meta.json",
       "implementationVerified": false,
-      "details": "Sets the Defender policy DisableRealtimeMonitoring to true, instructing Windows Security to stop actively scanning files and processes in real time. For better performance"
+      "details": "Sets the Defender policy DisableRealtimeMonitoring to true, instructing Windows Security to stop actively scanning files and processes in real time. For better performance",
+      "recommended": false
     },
     {
       "id": "disable-fast-startup",
@@ -101,7 +108,8 @@
       "declaredReversible": true,
       "evidence": "resources/tweaks/disable-fast-startup/meta.json",
       "implementationVerified": false,
-      "details": "Disables Windows Fast Startup by setting HiberbootEnabled to 0, preventing the system from using hybrid hibernation during shutdown for a full clean boot."
+      "details": "Disables Windows Fast Startup by setting HiberbootEnabled to 0, preventing the system from using hybrid hibernation during shutdown for a full clean boot.",
+      "recommended": false
     },
     {
       "id": "disable-location-tracking",
@@ -113,7 +121,8 @@
       "declaredReversible": true,
       "evidence": "resources/tweaks/disable-location-tracking/meta.json",
       "implementationVerified": false,
-      "details": "Disables telemetry, location access, diagnostic tracking, and automatic Windows updates by setting related registry values, reducing background data collection and improving system privacy and performance."
+      "details": "Disables telemetry, location access, diagnostic tracking, and automatic Windows updates by setting related registry values, reducing background data collection and improving system privacy and performance.",
+      "recommended": false
     },
     {
       "id": "disable-lockscreen-tips",
@@ -125,7 +134,8 @@
       "declaredReversible": true,
       "evidence": "resources/tweaks/disable-lockscreen-tips/meta.json",
       "implementationVerified": false,
-      "details": "Disables tips on the lockscreen."
+      "details": "Disables tips on the lockscreen.",
+      "recommended": false
     },
     {
       "id": "disable-mouse-acceleration",
@@ -138,7 +148,8 @@
       "declaredReversible": true,
       "evidence": "resources/tweaks/disable-mouse-acceleration/meta.json",
       "implementationVerified": false,
-      "details": "Disables Windows mouse acceleration by setting MouseSpeed, MouseThreshold1, and MouseThreshold2 to 0, enabling consistent and linear cursor movement for improved precision."
+      "details": "Disables Windows mouse acceleration by setting MouseSpeed, MouseThreshold1, and MouseThreshold2 to 0, enabling consistent and linear cursor movement for improved precision.",
+      "recommended": false
     },
     {
       "id": "disable-wifi-sense",
@@ -152,7 +163,8 @@
       "declaredReversible": true,
       "evidence": "resources/tweaks/disable-wifi-sense/meta.json",
       "implementationVerified": false,
-      "details": "Disables Wi-Fi Sense features by setting related policy values to 0, preventing automatic connection to open hotspots and blocking location-based Wi-Fi hotspot reporting to enhance privacy and reduce unwanted background activity"
+      "details": "Disables Wi-Fi Sense features by setting related policy values to 0, preventing automatic connection to open hotspots and blocking location-based Wi-Fi hotspot reporting to enhance privacy and reduce unwanted background activity",
+      "recommended": false
     },
     {
       "id": "enable-dark-mode",
@@ -165,7 +177,8 @@
       "declaredReversible": true,
       "evidence": "resources/tweaks/enable-dark-mode/meta.json",
       "implementationVerified": false,
-      "details": "Enables dark mode for system UI and apps by setting theme values to 0, then restarts Explorer to apply the change — also works on unactivated Windows systems where personalization settings are normally locked."
+      "details": "Enables dark mode for system UI and apps by setting theme values to 0, then restarts Explorer to apply the change — also works on unactivated Windows systems where personalization settings are normally locked.",
+      "recommended": false
     },
     {
       "id": "enable-end-task-right-click",
@@ -177,7 +190,8 @@
       "declaredReversible": true,
       "evidence": "resources/tweaks/enable-end-task-right-click/meta.json",
       "implementationVerified": false,
-      "details": "Enables the \"End Task\" option in the Windows 11 taskbar right-click menu by setting TaskbarEndTask to 1, allowing users to kill unresponsive apps directly from the taskbar without opening Task Manager."
+      "details": "Enables the \"End Task\" option in the Windows 11 taskbar right-click menu by setting TaskbarEndTask to 1, allowing users to kill unresponsive apps directly from the taskbar without opening Task Manager.",
+      "recommended": true
     },
     {
       "id": "enable-game-mode",
@@ -191,7 +205,8 @@
       "declaredReversible": true,
       "evidence": "resources/tweaks/enable-game-mode/meta.json",
       "implementationVerified": false,
-      "details": "Enables the game mode feature on windows to improve performance and reduce latency. altough it not all users see a performance boost or may even cause worse performance. its recommended to test with and without to see if it works for you."
+      "details": "Enables the game mode feature on windows to improve performance and reduce latency. altough it not all users see a performance boost or may even cause worse performance. its recommended to test with and without to see if it works for you.",
+      "recommended": false
     },
     {
       "id": "enable-hags",
@@ -205,7 +220,8 @@
       "declaredReversible": true,
       "evidence": "resources/tweaks/enable-hags/meta.json",
       "implementationVerified": true,
-      "details": "Hardware-Accelerated GPU Scheduling (HAGS) is a Windows feature that shifts more GPU management and scheduling tasks from the CPU to the GPU, reducing CPU overhead and potentially improving performance and latency"
+      "details": "Hardware-Accelerated GPU Scheduling (HAGS) is a Windows feature that shifts more GPU management and scheduling tasks from the CPU to the GPU, reducing CPU overhead and potentially improving performance and latency",
+      "recommended": false
     },
     {
       "id": "enable-optimization-for-windowed-games",
@@ -219,7 +235,8 @@
       "declaredReversible": true,
       "evidence": "resources/tweaks/enable-optimization-for-windowed-games/meta.json",
       "implementationVerified": false,
-      "details": "Enables Optimization For Windowed Games on Windows"
+      "details": "Enables Optimization For Windowed Games on Windows",
+      "recommended": false
     },
     {
       "id": "menu-show-delay-zero",
@@ -232,7 +249,8 @@
       "declaredReversible": true,
       "evidence": "resources/tweaks/menu-show-delay-zero/meta.json",
       "implementationVerified": false,
-      "details": "Reduces the menu show delay to 0ms for faster UI response by editing the 'MenuShowDelay' registry key."
+      "details": "Reduces the menu show delay to 0ms for faster UI response by editing the 'MenuShowDelay' registry key.",
+      "recommended": false
     },
     {
       "id": "optimize-network-settings",
@@ -245,7 +263,8 @@
       "declaredReversible": true,
       "evidence": "resources/tweaks/optimize-network-settings/meta.json",
       "implementationVerified": false,
-      "details": "Applies a comprehensive set of netsh TCP/IP tweaks to disable latency-inducing features, enable fast open, offload networking tasks to hardware, fine-tune congestion control, and set optimal MTU, all to maximize speed, reduce CPU load, and improve responsiveness for gaming and high-performance internet use."
+      "details": "Applies a comprehensive set of netsh TCP/IP tweaks to disable latency-inducing features, enable fast open, offload networking tasks to hardware, fine-tune congestion control, and set optimal MTU, all to maximize speed, reduce CPU load, and improve responsiveness for gaming and high-performance internet use.",
+      "recommended": false
     },
     {
       "id": "optimize-nvidia-settings",
@@ -259,7 +278,8 @@
       "declaredReversible": true,
       "evidence": "resources/tweaks/optimize-nvidia-settings/meta.json",
       "implementationVerified": false,
-      "details": "This Changes the following NVIDIA Control Panel settings:\n\n- Image Scaling → Off\n- Ambient Occlusion → Off\n- Anisotropic Filtering → Application-controlled\n- Antialiasing – FXAA → Off\n- Antialiasing – Gamma Correction → Off\n- Antialiasing – Mode → Application-controlled\n- CUDA – GPUs → All\n- DSR Factors → Off\n- Low Latency Mode → On\n- Max Frame Rate → Off\n- Multi-Frame Sampled AA (MFAA) → Off\n- OpenGL Rendering GPU → Use NVIDIA GPU\n- Power Management Mode → Prefer Maximum Performance\n- Shader Cache Size → Unlimited\n- Texture Filtering – Anisotropic Sample Optimization → On\n- Texture Filtering – Negative LOD Bias → Allow\n- Texture Filtering – Quality → High Performance\n- Texture Filtering – Trilinear Optimization → On\n- Threaded Optimization → On\n- Triple Buffering → Off\n- Vertical Sync → Off\n- Virtual Reality pre-rendered frames → 1"
+      "details": "This Changes the following NVIDIA Control Panel settings:\n\n- Image Scaling → Off\n- Ambient Occlusion → Off\n- Anisotropic Filtering → Application-controlled\n- Antialiasing – FXAA → Off\n- Antialiasing – Gamma Correction → Off\n- Antialiasing – Mode → Application-controlled\n- CUDA – GPUs → All\n- DSR Factors → Off\n- Low Latency Mode → On\n- Max Frame Rate → Off\n- Multi-Frame Sampled AA (MFAA) → Off\n- OpenGL Rendering GPU → Use NVIDIA GPU\n- Power Management Mode → Prefer Maximum Performance\n- Shader Cache Size → Unlimited\n- Texture Filtering – Anisotropic Sample Optimization → On\n- Texture Filtering – Negative LOD Bias → Allow\n- Texture Filtering – Quality → High Performance\n- Texture Filtering – Trilinear Optimization → On\n- Threaded Optimization → On\n- Triple Buffering → Off\n- Vertical Sync → Off\n- Virtual Reality pre-rendered frames → 1",
+      "recommended": false
     },
     {
       "id": "remove-gaming-apps",
@@ -272,7 +292,8 @@
       "declaredReversible": false,
       "evidence": "resources/tweaks/remove-gaming-apps/meta.json",
       "implementationVerified": false,
-      "details": "Removes Xbox app, Xbox Game Bar, and Xbox Game Overlay"
+      "details": "Removes Xbox app, Xbox Game Bar, and Xbox Game Overlay",
+      "recommended": false
     },
     {
       "id": "remove-onedrive",
@@ -286,7 +307,8 @@
       "declaredReversible": true,
       "evidence": "resources/tweaks/remove-onedrive/meta.json",
       "implementationVerified": false,
-      "details": "Uses registry, file system, and process commands to uninstall OneDrive, clean leftovers, and restore defaults—freeing RAM, CPU, and I/O by eliminating its background sync and startup tasks."
+      "details": "Uses registry, file system, and process commands to uninstall OneDrive, clean leftovers, and restore defaults—freeing RAM, CPU, and I/O by eliminating its background sync and startup tasks.",
+      "recommended": false
     },
     {
       "id": "revert-context-menu",
@@ -299,7 +321,8 @@
       "declaredReversible": true,
       "evidence": "resources/tweaks/revert-context-menu/meta.json",
       "implementationVerified": false,
-      "details": "Creates a blank InprocServer32 key under a specific CLSID to disable the modern right-click context menu in Windows 11, restoring the classic one and improving responsiveness in File Explorer."
+      "details": "Creates a blank InprocServer32 key under a specific CLSID to disable the modern right-click context menu in Windows 11, restoring the classic one and improving responsiveness in File Explorer.",
+      "recommended": true
     },
     {
       "id": "run-disk-cleanup",
@@ -312,7 +335,8 @@
       "declaredReversible": false,
       "evidence": "resources/tweaks/run-disk-cleanup/meta.json",
       "implementationVerified": false,
-      "details": "Runs Disk Cleanup in silent low-disk mode and permanently removes old Windows update files using DISM to free up space and reduce system clutter."
+      "details": "Runs Disk Cleanup in silent low-disk mode and permanently removes old Windows update files using DISM to free up space and reduce system clutter.",
+      "recommended": false
     },
     {
       "id": "set-powershell7-default",
@@ -324,7 +348,8 @@
       "declaredReversible": true,
       "evidence": "resources/tweaks/set-powershell7-default/meta.json",
       "implementationVerified": false,
-      "details": "Sets PowerShell 7 as the default profile in Windows Terminal (installs PS7 if missing)"
+      "details": "Sets PowerShell 7 as the default profile in Windows Terminal (installs PS7 if missing)",
+      "recommended": false
     },
     {
       "id": "set-services-to-manual",
@@ -337,7 +362,8 @@
       "declaredReversible": true,
       "evidence": "resources/tweaks/set-services-to-manual/meta.json",
       "implementationVerified": false,
-      "details": "Modifies the startup type of selected Windows services using Set-Service to disable or delay non-essential processes, reducing boot time, CPU usage, RAM consumption, and background activity for improved overall performance."
+      "details": "Modifies the startup type of selected Windows services using Set-Service to disable or delay non-essential processes, reducing boot time, CPU usage, RAM consumption, and background activity for improved overall performance.",
+      "recommended": true
     },
     {
       "id": "set-time-utc",
@@ -349,7 +375,8 @@
       "declaredReversible": true,
       "evidence": "resources/tweaks/set-time-utc/meta.json",
       "implementationVerified": false,
-      "details": "changes the system time to UTC"
+      "details": "changes the system time to UTC",
+      "recommended": false
     },
     {
       "id": "set-win32-priority-separation",
@@ -361,7 +388,8 @@
       "declaredReversible": true,
       "evidence": "resources/tweaks/set-win32-priority-separation/meta.json",
       "implementationVerified": false,
-      "details": "Sets the 'Win32PrioritySeparation' registry key to optimize foreground process priority, improving perceived responsiveness."
+      "details": "Sets the 'Win32PrioritySeparation' registry key to optimize foreground process priority, improving perceived responsiveness.",
+      "recommended": false
     },
     {
       "id": "ultimate-performance-plan",
@@ -374,7 +402,8 @@
       "declaredReversible": true,
       "evidence": "resources/tweaks/ultimate-performance-plan/meta.json",
       "implementationVerified": false,
-      "details": "Enables the Ultimate Performance power plan by creating it if missing, retrieving its GUID, and activating it to maximize system responsiveness and performance by preventing power-saving limitations."
+      "details": "Enables the Ultimate Performance power plan by creating it if missing, retrieving its GUID, and activating it to maximize system responsiveness and performance by preventing power-saving limitations.",
+      "recommended": true
     }
   ],
   "newModules": [

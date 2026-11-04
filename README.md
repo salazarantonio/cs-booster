@@ -1,6 +1,6 @@
 # CS Booster
 
-Aplicativo desktop Windows para diagnóstico e ajustes individuais voltados a jogos competitivos. Versão inicial 0.1.0.
+Aplicativo desktop Windows para diagnóstico e ajustes individuais voltados a jogos competitivos. Versão de desenvolvimento 0.2.0.
 
 ## Estado atual
 
@@ -8,9 +8,11 @@ Aplicativo desktop Windows para diagnóstico e ajustes individuais voltados a jo
 - Seis ajustes de usuário com backup e restauração dos valores anteriores.
 - Consulta da instalação Steam/CS2.
 - Comparação de capturas JSON de frametime.
-- Consulta e planejamento de perfis de mitigações da CPU, sem aplicação.
+- Consulta, planejamento, aplicação e restauração dos 12 perfis de mitigações da CPU; alterações exigem administrador. Estado efetivo no kernel ainda não é verificado.
+- Debloat seletivo de aplicativos da conta atual, com confirmação individual da seleção.
+- Seis recomendações com estrelas, filtro e categorias por cartão.
 
-Limpeza, ajustes avançados de GPU, aplicação de mitigações, gerenciador de instalações e pontos de restauração completos ainda estão em desenvolvimento. Não há promessa de ganho de FPS.
+Limpeza de caches, ajustes avançados de GPU, gerenciador de instalações e pontos de restauração completos ainda estão em desenvolvimento. A alternativa Raphire Win11Debloat é apresentada como orientação, sem download ou execução automática. Não há promessa de ganho de FPS.
 
 ## Desenvolvimento
 
@@ -32,10 +34,30 @@ Dados, logs e backups ficam em data/settings no modo de desenvolvimento e junto 
 
 ## Validação e limitações
 
-15 testes de unidade passaram, incluindo registro simulado, backup e restauração exata, recusa de destinos não autorizados e cálculo de frametime. A interface foi verificada pela prévia local. A abertura do Electron neste ambiente de desenvolvimento encerrou antes de exibir a janela com o código 0x80000003; a validação do pacote desktop ainda está pendente.
+33 testes de unidade passaram, incluindo registro simulado, backup e restauração exata, recusa de destinos não autorizados e cálculo de frametime. A interface foi verificada pela prévia local. A abertura do Electron neste ambiente de desenvolvimento encerrou antes de exibir a janela com o código 0x80000003; a validação do pacote desktop ainda está pendente.
 
 As consultas CIM podem ser negadas pelo Windows; nesse caso o painel preserva os dados disponíveis e indica os demais como desconhecidos. Nenhum ajuste real foi aplicado ao computador durante o desenvolvimento.
 
 ## Atualizações
 
 As próximas mudanças serão versionadas em commits com descrição e validação. Este repositório acompanha o trabalho desenvolvido nas sessões do projeto; não existe atualização autônoma em segundo plano.
+
+## Mitigações da CPU
+
+Feche a instância atual e use `Abrir CS Booster como Administrador.cmd` se decidir aplicar ou restaurar um perfil. O aplicativo não se eleva nem reinicia automaticamente.
+
+O perfil `desligar-tudo` aplica os valores do perfil enviado pelo usuário (FeatureSettingsOverride=3 e FeatureSettingsOverrideMask=3). O nome do perfil não é garantia de desativação de toda mitigação presente ou futura em qualquer CPU/Windows. O estado gravado é separado do estado efetivo no kernel.
+
+O comando `powershell -ExecutionPolicy Bypass -File ...` citado no fluxo original permite iniciar aquele script no processo invocado; não é ele que altera as mitigações. As alterações do script são nos valores de registro. O CS Booster implementa suas próprias operações sobre os mesmos valores autorizados, sem executar esse arquivo ou alterar permanentemente a política de execução.
+
+Backups das mitigações ficam em `%ProgramData%/CSBooster/mitigation-backups`, com proprietário e permissões de Administradores/SYSTEM. A restauração verifica proprietário, permissões, ausência de redirecionamento e destinos autorizados. Falhas de gravação tentam reverter os valores tocados e informam se a recuperação não foi completa.
+
+## Limpar Windows
+
+O fluxo apresenta CS Booster seletivo e a alternativa guiada Raphire. No modo seletivo há 18 candidatos conhecidos, incluindo jogos e componentes Xbox; somente os instalados e removíveis são selecionáveis. Nenhum vem marcado. A operação remove somente da conta atual, sem `AllUsers` e sem remover provisionamento para novos usuários. Store, App Installer, frameworks, Gaming Services e Identity Provider não fazem parte da lista de remoção.
+
+Antes da remoção, a lista é novamente validada e um relatório é salvo. O relatório não é um backup dos aplicativos nem de seus dados. A reinstalação depende dos pacotes e da disponibilidade na Store. Resultados de falha parcial são exibidos por aplicativo.
+
+## Limites desta revisão
+
+Aplicação real das mitigações e remoção real de aplicativos não foram executadas. As operações de escrita foram verificadas por testes simulados; a consulta AppX no ambiente retornou acesso negado. A prévia verificou seis recomendações, categorias, escolha do método de debloat, presença do perfil desligar-tudo e bloqueio de aplicação sem administrador. A abertura do pacote Electron e testes Windows completos ainda precisam de validação em ambiente adequado.
