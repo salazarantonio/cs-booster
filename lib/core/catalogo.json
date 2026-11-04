@@ -1,0 +1,1272 @@
+{
+  "existingTweaks": [
+    {
+      "id": "align-taskbar-left",
+      "title": "Align Taskbar Left",
+      "categories": [
+        "General",
+        "Appearance"
+      ],
+      "restart": null,
+      "declaredReversible": true,
+      "evidence": "resources/tweaks/align-taskbar-left/meta.json",
+      "implementationVerified": false,
+      "details": "Forces the Windows taskbar to align left by editing the system registry. by setting the 'TaskbarAl' registry value to 0"
+    },
+    {
+      "id": "debloat-windows",
+      "title": "Debloat Windows",
+      "categories": [
+        "Performance",
+        "Privacy"
+      ],
+      "restart": null,
+      "declaredReversible": false,
+      "evidence": "resources/tweaks/debloat-windows/meta.json",
+      "implementationVerified": false,
+      "details": "The user can choose between two methods to debloat Windows:\n\n 1. TogsBoost Custom Selective Script: This method allows users to select which apps they want to keep. A WPF Window is presented where users can check or uncheck apps from a list.\n\n 2. Raphire's Win11Debloat Script: This method uses a well-known script that removes a wide range of built-in Windows apps and features. It is comprehensive and suitable for users who want a quick and effective way to debloat their system.\n\n Both remove bloatware and improve privacy by removing unnecessary Microsoft components, but they cater to different user preferences regarding control and convenience."
+    },
+    {
+      "id": "detailed-bsod",
+      "title": "Detailed BSOD",
+      "categories": [
+        "General"
+      ],
+      "restart": null,
+      "declaredReversible": true,
+      "evidence": "resources/tweaks/detailed-bsod/meta.json",
+      "implementationVerified": false,
+      "details": "Enables detailed technical information on the Blue Screen of Death by setting DisplayParameters to 1 in the CrashControl registry."
+    },
+    {
+      "id": "disable-background-ms-store-apps",
+      "title": "Disable Background MS Store apps",
+      "categories": [
+        "Performance",
+        "Privacy"
+      ],
+      "restart": null,
+      "declaredReversible": true,
+      "evidence": "resources/tweaks/disable-background-ms-store-apps/meta.json",
+      "implementationVerified": false,
+      "details": "Disables all background activity for modern UWP apps by setting 'GlobalUserDisabled' to 1 under the current user's BackgroundAccessApplications registry key, creating the key if it doesn't exist."
+    },
+    {
+      "id": "disable-copilot",
+      "title": "Disable Copilot",
+      "categories": [
+        "Performance",
+        "Privacy"
+      ],
+      "restart": null,
+      "declaredReversible": true,
+      "evidence": "resources/tweaks/disable-copilot/meta.json",
+      "implementationVerified": false,
+      "details": "Finds and removes all installed Microsoft Copilot-related AppX packages for all users by filtering package names with 'Microsoft.Copilot'"
+    },
+    {
+      "id": "disable-core-isolation",
+      "title": "Disable Core Isolation",
+      "categories": [
+        "Performance",
+        "Gaming"
+      ],
+      "restart": true,
+      "declaredReversible": true,
+      "evidence": "resources/tweaks/disable-core-isolation/meta.json",
+      "implementationVerified": false,
+      "details": "Creates the registry path for Hypervisor-Enforced Code Integrity under DeviceGuard if missing, and disables HVCI by setting Enabled to 0 in the system-wide registry."
+    },
+    {
+      "id": "disable-defender-rtp",
+      "title": "Disable Defender RTP",
+      "categories": [
+        "Performance",
+        "General"
+      ],
+      "restart": null,
+      "declaredReversible": true,
+      "evidence": "resources/tweaks/disable-defender-rtp/meta.json",
+      "implementationVerified": false,
+      "details": "Sets the Defender policy DisableRealtimeMonitoring to true, instructing Windows Security to stop actively scanning files and processes in real time. For better performance"
+    },
+    {
+      "id": "disable-fast-startup",
+      "title": "Disable Fast Startup",
+      "categories": [
+        "Performance",
+        "General"
+      ],
+      "restart": null,
+      "declaredReversible": true,
+      "evidence": "resources/tweaks/disable-fast-startup/meta.json",
+      "implementationVerified": false,
+      "details": "Disables Windows Fast Startup by setting HiberbootEnabled to 0, preventing the system from using hybrid hibernation during shutdown for a full clean boot."
+    },
+    {
+      "id": "disable-location-tracking",
+      "title": "Disable Location Tracking",
+      "categories": [
+        "Privacy"
+      ],
+      "restart": null,
+      "declaredReversible": true,
+      "evidence": "resources/tweaks/disable-location-tracking/meta.json",
+      "implementationVerified": false,
+      "details": "Disables telemetry, location access, diagnostic tracking, and automatic Windows updates by setting related registry values, reducing background data collection and improving system privacy and performance."
+    },
+    {
+      "id": "disable-lockscreen-tips",
+      "title": "Disable Lockscreen Tips",
+      "categories": [
+        "General"
+      ],
+      "restart": null,
+      "declaredReversible": true,
+      "evidence": "resources/tweaks/disable-lockscreen-tips/meta.json",
+      "implementationVerified": false,
+      "details": "Disables tips on the lockscreen."
+    },
+    {
+      "id": "disable-mouse-acceleration",
+      "title": "Disable Mouse Acceleration",
+      "categories": [
+        "Performance",
+        "Gaming"
+      ],
+      "restart": null,
+      "declaredReversible": true,
+      "evidence": "resources/tweaks/disable-mouse-acceleration/meta.json",
+      "implementationVerified": false,
+      "details": "Disables Windows mouse acceleration by setting MouseSpeed, MouseThreshold1, and MouseThreshold2 to 0, enabling consistent and linear cursor movement for improved precision."
+    },
+    {
+      "id": "disable-wifi-sense",
+      "title": "Disable Wifi Sense",
+      "categories": [
+        "Privacy",
+        "Network",
+        "General"
+      ],
+      "restart": null,
+      "declaredReversible": true,
+      "evidence": "resources/tweaks/disable-wifi-sense/meta.json",
+      "implementationVerified": false,
+      "details": "Disables Wi-Fi Sense features by setting related policy values to 0, preventing automatic connection to open hotspots and blocking location-based Wi-Fi hotspot reporting to enhance privacy and reduce unwanted background activity"
+    },
+    {
+      "id": "enable-dark-mode",
+      "title": "Enable Dark Mode",
+      "categories": [
+        "General",
+        "Appearance"
+      ],
+      "restart": null,
+      "declaredReversible": true,
+      "evidence": "resources/tweaks/enable-dark-mode/meta.json",
+      "implementationVerified": false,
+      "details": "Enables dark mode for system UI and apps by setting theme values to 0, then restarts Explorer to apply the change — also works on unactivated Windows systems where personalization settings are normally locked."
+    },
+    {
+      "id": "enable-end-task-right-click",
+      "title": "Enable End Task With Right Click",
+      "categories": [
+        "General"
+      ],
+      "restart": null,
+      "declaredReversible": true,
+      "evidence": "resources/tweaks/enable-end-task-right-click/meta.json",
+      "implementationVerified": false,
+      "details": "Enables the \"End Task\" option in the Windows 11 taskbar right-click menu by setting TaskbarEndTask to 1, allowing users to kill unresponsive apps directly from the taskbar without opening Task Manager."
+    },
+    {
+      "id": "enable-game-mode",
+      "title": "Enable Game Mode",
+      "categories": [
+        "General",
+        "Performance",
+        "Gaming"
+      ],
+      "restart": null,
+      "declaredReversible": true,
+      "evidence": "resources/tweaks/enable-game-mode/meta.json",
+      "implementationVerified": false,
+      "details": "Enables the game mode feature on windows to improve performance and reduce latency. altough it not all users see a performance boost or may even cause worse performance. its recommended to test with and without to see if it works for you."
+    },
+    {
+      "id": "enable-hags",
+      "title": "Enable HAGS",
+      "categories": [
+        "Performance",
+        "Gaming",
+        "GPU"
+      ],
+      "restart": null,
+      "declaredReversible": true,
+      "evidence": "resources/tweaks/enable-hags/meta.json",
+      "implementationVerified": true,
+      "details": "Hardware-Accelerated GPU Scheduling (HAGS) is a Windows feature that shifts more GPU management and scheduling tasks from the CPU to the GPU, reducing CPU overhead and potentially improving performance and latency"
+    },
+    {
+      "id": "enable-optimization-for-windowed-games",
+      "title": "Enable Optimization For Windowed Games",
+      "categories": [
+        "General",
+        "Performance",
+        "Gaming"
+      ],
+      "restart": true,
+      "declaredReversible": true,
+      "evidence": "resources/tweaks/enable-optimization-for-windowed-games/meta.json",
+      "implementationVerified": false,
+      "details": "Enables Optimization For Windowed Games on Windows"
+    },
+    {
+      "id": "menu-show-delay-zero",
+      "title": "Menu Show Delay Zero",
+      "categories": [
+        "Performance",
+        "Appearance"
+      ],
+      "restart": null,
+      "declaredReversible": true,
+      "evidence": "resources/tweaks/menu-show-delay-zero/meta.json",
+      "implementationVerified": false,
+      "details": "Reduces the menu show delay to 0ms for faster UI response by editing the 'MenuShowDelay' registry key."
+    },
+    {
+      "id": "optimize-network-settings",
+      "title": "Optimize Network Settings",
+      "categories": [
+        "Network",
+        "Gaming"
+      ],
+      "restart": true,
+      "declaredReversible": true,
+      "evidence": "resources/tweaks/optimize-network-settings/meta.json",
+      "implementationVerified": false,
+      "details": "Applies a comprehensive set of netsh TCP/IP tweaks to disable latency-inducing features, enable fast open, offload networking tasks to hardware, fine-tune congestion control, and set optimal MTU, all to maximize speed, reduce CPU load, and improve responsiveness for gaming and high-performance internet use."
+    },
+    {
+      "id": "optimize-nvidia-settings",
+      "title": "Optimize Nvidia Settings",
+      "categories": [
+        "Performance",
+        "GPU",
+        "Gaming"
+      ],
+      "restart": null,
+      "declaredReversible": true,
+      "evidence": "resources/tweaks/optimize-nvidia-settings/meta.json",
+      "implementationVerified": false,
+      "details": "This Changes the following NVIDIA Control Panel settings:\n\n- Image Scaling → Off\n- Ambient Occlusion → Off\n- Anisotropic Filtering → Application-controlled\n- Antialiasing – FXAA → Off\n- Antialiasing – Gamma Correction → Off\n- Antialiasing – Mode → Application-controlled\n- CUDA – GPUs → All\n- DSR Factors → Off\n- Low Latency Mode → On\n- Max Frame Rate → Off\n- Multi-Frame Sampled AA (MFAA) → Off\n- OpenGL Rendering GPU → Use NVIDIA GPU\n- Power Management Mode → Prefer Maximum Performance\n- Shader Cache Size → Unlimited\n- Texture Filtering – Anisotropic Sample Optimization → On\n- Texture Filtering – Negative LOD Bias → Allow\n- Texture Filtering – Quality → High Performance\n- Texture Filtering – Trilinear Optimization → On\n- Threaded Optimization → On\n- Triple Buffering → Off\n- Vertical Sync → Off\n- Virtual Reality pre-rendered frames → 1"
+    },
+    {
+      "id": "remove-gaming-apps",
+      "title": "Remove Gaming Apps",
+      "categories": [
+        "Performance",
+        "Privacy"
+      ],
+      "restart": null,
+      "declaredReversible": false,
+      "evidence": "resources/tweaks/remove-gaming-apps/meta.json",
+      "implementationVerified": false,
+      "details": "Removes Xbox app, Xbox Game Bar, and Xbox Game Overlay"
+    },
+    {
+      "id": "remove-onedrive",
+      "title": "Remove OneDrive",
+      "categories": [
+        "Performance",
+        "General",
+        "Privacy"
+      ],
+      "restart": null,
+      "declaredReversible": true,
+      "evidence": "resources/tweaks/remove-onedrive/meta.json",
+      "implementationVerified": false,
+      "details": "Uses registry, file system, and process commands to uninstall OneDrive, clean leftovers, and restore defaults—freeing RAM, CPU, and I/O by eliminating its background sync and startup tasks."
+    },
+    {
+      "id": "revert-context-menu",
+      "title": "Revert Context Menu",
+      "categories": [
+        "General",
+        "Appearance"
+      ],
+      "restart": null,
+      "declaredReversible": true,
+      "evidence": "resources/tweaks/revert-context-menu/meta.json",
+      "implementationVerified": false,
+      "details": "Creates a blank InprocServer32 key under a specific CLSID to disable the modern right-click context menu in Windows 11, restoring the classic one and improving responsiveness in File Explorer."
+    },
+    {
+      "id": "run-disk-cleanup",
+      "title": "Run Disk Cleanup",
+      "categories": [
+        "General",
+        "Performance"
+      ],
+      "restart": null,
+      "declaredReversible": false,
+      "evidence": "resources/tweaks/run-disk-cleanup/meta.json",
+      "implementationVerified": false,
+      "details": "Runs Disk Cleanup in silent low-disk mode and permanently removes old Windows update files using DISM to free up space and reduce system clutter."
+    },
+    {
+      "id": "set-powershell7-default",
+      "title": "Set PowerShell 7 as Default",
+      "categories": [
+        "General"
+      ],
+      "restart": null,
+      "declaredReversible": true,
+      "evidence": "resources/tweaks/set-powershell7-default/meta.json",
+      "implementationVerified": false,
+      "details": "Sets PowerShell 7 as the default profile in Windows Terminal (installs PS7 if missing)"
+    },
+    {
+      "id": "set-services-to-manual",
+      "title": "Set Services to Manual",
+      "categories": [
+        "Performance",
+        "Gaming"
+      ],
+      "restart": null,
+      "declaredReversible": true,
+      "evidence": "resources/tweaks/set-services-to-manual/meta.json",
+      "implementationVerified": false,
+      "details": "Modifies the startup type of selected Windows services using Set-Service to disable or delay non-essential processes, reducing boot time, CPU usage, RAM consumption, and background activity for improved overall performance."
+    },
+    {
+      "id": "set-time-utc",
+      "title": "Set Time To UTC",
+      "categories": [
+        "General"
+      ],
+      "restart": null,
+      "declaredReversible": true,
+      "evidence": "resources/tweaks/set-time-utc/meta.json",
+      "implementationVerified": false,
+      "details": "changes the system time to UTC"
+    },
+    {
+      "id": "set-win32-priority-separation",
+      "title": "Set Win32 Priority Separation",
+      "categories": [
+        "Performance"
+      ],
+      "restart": null,
+      "declaredReversible": true,
+      "evidence": "resources/tweaks/set-win32-priority-separation/meta.json",
+      "implementationVerified": false,
+      "details": "Sets the 'Win32PrioritySeparation' registry key to optimize foreground process priority, improving perceived responsiveness."
+    },
+    {
+      "id": "ultimate-performance-plan",
+      "title": "Ultimate Performance Power Plan",
+      "categories": [
+        "Performance",
+        "Gaming"
+      ],
+      "restart": null,
+      "declaredReversible": true,
+      "evidence": "resources/tweaks/ultimate-performance-plan/meta.json",
+      "implementationVerified": false,
+      "details": "Enables the Ultimate Performance power plan by creating it if missing, retrieving its GUID, and activating it to maximize system responsiveness and performance by preventing power-saving limitations."
+    }
+  ],
+  "newModules": [
+    {
+      "id": "advanced-security",
+      "title": "Segurança avançada",
+      "features": [
+        "Estado configurado e estado efetivo separados",
+        "Perfis por fabricante",
+        "Backup dos valores anteriores",
+        "Restaurar backup",
+        "Voltar ao padrão do Windows",
+        "Relatório",
+        "Reinicialização pendente"
+      ],
+      "profiles": [
+        {
+          "id": "padrao",
+          "value": 0,
+          "label": "Padrao do Windows: Spectre v2 + Meltdown ATIVOS",
+          "security": "Padrao",
+          "vendors": [
+            "Intel",
+            "AMD",
+            "ARM"
+          ],
+          "removeOverrides": true,
+          "minVm": false,
+          "validation": "transcribed-from-user-script; hardware/kernel validation pending"
+        },
+        {
+          "id": "desligar-v2",
+          "value": 1,
+          "label": "Desligar mitigacao do Spectre v2 (CVE-2017-5715)",
+          "security": "REDUZIDA",
+          "vendors": [
+            "Intel",
+            "AMD"
+          ],
+          "removeOverrides": false,
+          "minVm": false,
+          "validation": "transcribed-from-user-script; hardware/kernel validation pending"
+        },
+        {
+          "id": "ssbd",
+          "value": 8,
+          "label": "SSBD (CVE-2018-3639) + Spectre v2 + Meltdown",
+          "security": "MAIOR",
+          "vendors": [
+            "Intel",
+            "AMD"
+          ],
+          "removeOverrides": false,
+          "minVm": false,
+          "validation": "transcribed-from-user-script; hardware/kernel validation pending"
+        },
+        {
+          "id": "amd-arm-v2",
+          "value": 64,
+          "label": "AMD e ARM: Spectre v2 usuario->kernel",
+          "security": "MAIOR",
+          "vendors": [
+            "AMD",
+            "ARM"
+          ],
+          "removeOverrides": false,
+          "minVm": false,
+          "validation": "transcribed-from-user-script; hardware/kernel validation pending"
+        },
+        {
+          "id": "amd-completo",
+          "value": 72,
+          "label": "AMD: Spectre v2 usuario->kernel + SSBD",
+          "security": "MAIOR",
+          "vendors": [
+            "AMD"
+          ],
+          "removeOverrides": false,
+          "minVm": true,
+          "validation": "transcribed-from-user-script; hardware/kernel validation pending"
+        },
+        {
+          "id": "intel-full",
+          "value": 72,
+          "label": "TAA + MDS + L1TF + SSBD, mantendo Hyper-Threading",
+          "security": "MAIOR",
+          "vendors": [
+            "Intel"
+          ],
+          "removeOverrides": false,
+          "minVm": true,
+          "validation": "transcribed-from-user-script; hardware/kernel validation pending"
+        },
+        {
+          "id": "intel-full-semht",
+          "value": 8264,
+          "label": "TAA + MDS + L1TF + SSBD, com Hyper-Threading DESLIGADO",
+          "security": "MAIOR",
+          "vendors": [
+            "Intel"
+          ],
+          "removeOverrides": false,
+          "minVm": true,
+          "validation": "transcribed-from-user-script; hardware/kernel validation pending"
+        },
+        {
+          "id": "intel-bhi",
+          "value": 8388608,
+          "label": "Branch History Injection (CVE-2022-0001)",
+          "security": "MAIOR",
+          "vendors": [
+            "Intel"
+          ],
+          "removeOverrides": false,
+          "minVm": false,
+          "validation": "transcribed-from-user-script; hardware/kernel validation pending"
+        },
+        {
+          "id": "intel-completo",
+          "value": 8396872,
+          "label": "TAA + MDS + L1TF + SSBD + HT off + BHI",
+          "security": "MAIOR",
+          "vendors": [
+            "Intel"
+          ],
+          "removeOverrides": false,
+          "minVm": true,
+          "validation": "transcribed-from-user-script; hardware/kernel validation pending"
+        },
+        {
+          "id": "amd-btc",
+          "value": 16777280,
+          "label": "Branch Type Confusion (CVE-2022-23825)",
+          "security": "MAIOR",
+          "vendors": [
+            "AMD"
+          ],
+          "removeOverrides": false,
+          "minVm": false,
+          "validation": "transcribed-from-user-script; hardware/kernel validation pending"
+        },
+        {
+          "id": "amd-inception",
+          "value": 67108928,
+          "label": "Return Address Predictor / Inception (CVE-2023-20569)",
+          "security": "MAIOR",
+          "vendors": [
+            "AMD"
+          ],
+          "removeOverrides": false,
+          "minVm": false,
+          "validation": "transcribed-from-user-script; hardware/kernel validation pending"
+        },
+        {
+          "id": "desligar-tudo",
+          "value": 3,
+          "label": "DESATIVAR Spectre v2, Meltdown, MDS, TAA, SSBD e L1TF",
+          "security": "REDUZIDA",
+          "vendors": [
+            "Intel",
+            "AMD"
+          ],
+          "removeOverrides": false,
+          "minVm": false,
+          "validation": "transcribed-from-user-script; hardware/kernel validation pending"
+        }
+      ]
+    },
+    {
+      "id": "games",
+      "title": "Jogos",
+      "sections": [
+        "CS2"
+      ]
+    },
+    {
+      "id": "diagnostics",
+      "title": "Diagnóstico",
+      "sections": [
+        "Hardware",
+        "Armazenamento",
+        "Drivers e BIOS",
+        "Apresentação e latência",
+        "Comparação A/B"
+      ]
+    }
+  ],
+  "videoComparison": {
+    "status": "compared-from-user-transcripts",
+    "evidenceLimit": "No timestamps or visual-only values supplied. App backend behavior partly unverified.",
+    "urls": [
+      "https://www.youtube.com/watch?v=cNRl8FpeaGk",
+      "https://www.youtube.com/watch?v=eLYgl-hHrE8"
+    ],
+    "items": [
+      {
+        "id": "video-01",
+        "video": "optimization",
+        "transcriptTopic": "Shaders DirectX D3DSCache",
+        "existingId": null,
+        "module": "Limpeza",
+        "mode": "assistido",
+        "decision": "Adicionar limpeza seletiva; listar somente diretórios de cache reconhecidos e avisar sobre recompilação.",
+        "implementationStatus": "catalogued-not-executable",
+        "evidence": "user-provided-transcript-no-timestamps",
+        "executionAllowed": false
+      },
+      {
+        "id": "video-02",
+        "video": "optimization",
+        "transcriptTopic": "Shaders NVIDIA e AMD",
+        "existingId": null,
+        "module": "Limpeza",
+        "mode": "assistido",
+        "decision": "Detectar fabricante e caminhos; não apagar a pasta inteira NVIDIA/AMD; ignorar arquivos em uso.",
+        "implementationStatus": "catalogued-not-executable",
+        "evidence": "user-provided-transcript-no-timestamps",
+        "executionAllowed": false
+      },
+      {
+        "id": "video-03",
+        "video": "optimization",
+        "transcriptTopic": "Shader cache Steam 730",
+        "existingId": null,
+        "module": "Jogos → CS2",
+        "mode": "assistido",
+        "decision": "Detectar bibliotecas Steam, fechar jogo/Steam e renomear o cache com backup único; permitir restaurar.",
+        "implementationStatus": "catalogued-not-executable",
+        "evidence": "user-provided-transcript-no-timestamps",
+        "executionAllowed": false
+      },
+      {
+        "id": "video-04",
+        "video": "optimization",
+        "transcriptTopic": "Configurações userdata 730",
+        "existingId": null,
+        "module": "Jogos → CS2",
+        "mode": "assistido",
+        "decision": "Escolher conta explicitamente e criar backup; avisar que binds e configurações serão redefinidos; não tocar em outras contas.",
+        "implementationStatus": "catalogued-not-executable",
+        "evidence": "user-provided-transcript-no-timestamps",
+        "executionAllowed": false
+      },
+      {
+        "id": "video-05",
+        "video": "optimization",
+        "transcriptTopic": "Steam Cloud do CS2",
+        "existingId": null,
+        "module": "Jogos → CS2",
+        "mode": "guia",
+        "decision": "Orientar suspensão temporária e resolução de conflito escolhendo dados locais somente após verificação do usuário.",
+        "implementationStatus": "catalogued-not-executable",
+        "evidence": "user-provided-transcript-no-timestamps",
+        "executionAllowed": false
+      },
+      {
+        "id": "video-06",
+        "video": "optimization",
+        "transcriptTopic": "Compatibilidade e otimizações de tela inteira",
+        "existingId": null,
+        "module": "Jogos → CS2",
+        "mode": "assistido",
+        "decision": "Inspecionar configuração do executável e permitir voltar ao padrão preservando outras flags; não confundir com otimizações em janela.",
+        "implementationStatus": "catalogued-not-executable",
+        "evidence": "user-provided-transcript-no-timestamps",
+        "executionAllowed": false
+      },
+      {
+        "id": "video-07",
+        "video": "optimization",
+        "transcriptTopic": "SSD e espaço livre",
+        "existingId": null,
+        "module": "Diagnóstico",
+        "mode": "diagnostico",
+        "decision": "Mostrar volume do jogo, tipo e espaço livre; 15–20% como referência do vídeo, não requisito universal.",
+        "implementationStatus": "catalogued-not-executable",
+        "evidence": "user-provided-transcript-no-timestamps",
+        "executionAllowed": false
+      },
+      {
+        "id": "video-08",
+        "video": "optimization",
+        "transcriptTopic": "Otimizar unidade e TRIM",
+        "existingId": null,
+        "module": "Limpeza",
+        "mode": "assistido",
+        "decision": "Diagnosticar suporte e abrir ferramenta do Windows; operação futura específica por tipo de volume.",
+        "implementationStatus": "catalogued-not-executable",
+        "evidence": "user-provided-transcript-no-timestamps",
+        "executionAllowed": false
+      },
+      {
+        "id": "video-09",
+        "video": "optimization",
+        "transcriptTopic": "MPO e OverlayTestMode",
+        "existingId": null,
+        "module": "Otimizações → GPU",
+        "mode": "assistido",
+        "decision": "Mostrar override específico, salvar presença/tipo/valor e oferecer retorno ao padrão; não afirmar que leitura do registro comprova MPO ativo.",
+        "implementationStatus": "catalogued-not-executable",
+        "evidence": "user-provided-transcript-no-timestamps",
+        "executionAllowed": false
+      },
+      {
+        "id": "video-10",
+        "video": "optimization",
+        "transcriptTopic": "Timers BCD useplatformclock useplatformtick disabledynamictick",
+        "existingId": null,
+        "module": "Diagnóstico",
+        "mode": "assistido",
+        "decision": "Consultar somente as três opções; retorno ao padrão em fluxo avançado futuro com backup da entrada; nunca apagar outras opções por semelhança.",
+        "implementationStatus": "catalogued-not-executable",
+        "evidence": "user-provided-transcript-no-timestamps",
+        "executionAllowed": false
+      },
+      {
+        "id": "video-11",
+        "video": "optimization",
+        "transcriptTopic": "ExitLag e cupom",
+        "existingId": null,
+        "module": "Jogos → CS2",
+        "mode": "excluido",
+        "decision": "Trecho publicitário; nenhuma instalação ou dependência paga adicionada.",
+        "implementationStatus": "catalogued-not-executable",
+        "evidence": "user-provided-transcript-no-timestamps",
+        "executionAllowed": false
+      },
+      {
+        "id": "video-12",
+        "video": "optimization",
+        "transcriptTopic": "RAM canais e slots",
+        "existingId": null,
+        "module": "Diagnóstico",
+        "mode": "diagnostico",
+        "decision": "Inventariar dados disponíveis; orientação baseada no manual da placa; não afirmar dual channel só pela contagem de módulos.",
+        "implementationStatus": "catalogued-not-executable",
+        "evidence": "user-provided-transcript-no-timestamps",
+        "executionAllowed": false
+      },
+      {
+        "id": "video-13",
+        "video": "optimization",
+        "transcriptTopic": "XMP EXPO frequência e timings",
+        "existingId": null,
+        "module": "Diagnóstico",
+        "mode": "guia",
+        "decision": "Mostrar dados expostos e checklist de BIOS; alterações somente manuais; distinguir MHz de MT/s.",
+        "implementationStatus": "catalogued-not-executable",
+        "evidence": "user-provided-transcript-no-timestamps",
+        "executionAllowed": false
+      },
+      {
+        "id": "video-14",
+        "video": "optimization",
+        "transcriptTopic": "Ryzen MCLK UCLK e FCLK",
+        "existingId": null,
+        "module": "Diagnóstico",
+        "mode": "guia",
+        "decision": "Distinguir os três clocks; registrar desconhecido quando não houver sensor; 1:1 não é recomendação universal.",
+        "implementationStatus": "catalogued-not-executable",
+        "evidence": "user-provided-transcript-no-timestamps",
+        "executionAllowed": false
+      },
+      {
+        "id": "video-15",
+        "video": "optimization",
+        "transcriptTopic": "Versão de BIOS",
+        "existingId": null,
+        "module": "Diagnóstico",
+        "mode": "guia",
+        "decision": "Mostrar placa e versão/data; encaminhar ao fabricante; nenhuma atualização automática.",
+        "implementationStatus": "catalogued-not-executable",
+        "evidence": "user-provided-transcript-no-timestamps",
+        "executionAllowed": false
+      },
+      {
+        "id": "video-16",
+        "video": "optimization",
+        "transcriptTopic": "Driver de chipset",
+        "existingId": null,
+        "module": "Diagnóstico",
+        "mode": "guia",
+        "decision": "Identificar plataforma e encaminhar à fonte oficial; não escolher driver por palpite.",
+        "implementationStatus": "catalogued-not-executable",
+        "evidence": "user-provided-transcript-no-timestamps",
+        "executionAllowed": false
+      },
+      {
+        "id": "video-17",
+        "video": "optimization",
+        "transcriptTopic": "Resizable BAR SAM",
+        "existingId": null,
+        "module": "Diagnóstico",
+        "mode": "guia",
+        "decision": "Mostrar estado quando API confiável disponível; comparar por jogo; não desligar globalmente como regra para CS2.",
+        "implementationStatus": "catalogued-not-executable",
+        "evidence": "user-provided-transcript-no-timestamps",
+        "executionAllowed": false
+      },
+      {
+        "id": "video-18",
+        "video": "optimization",
+        "transcriptTopic": "Link PCIe sob carga",
+        "existingId": null,
+        "module": "Diagnóstico",
+        "mode": "diagnostico",
+        "decision": "Separar capacidade e estado atual; não indicar defeito com base no estado de repouso.",
+        "implementationStatus": "catalogued-not-executable",
+        "evidence": "user-provided-transcript-no-timestamps",
+        "executionAllowed": false
+      },
+      {
+        "id": "video-19",
+        "video": "optimization",
+        "transcriptTopic": "Clock efetivo CPU e limites térmicos/energia",
+        "existingId": null,
+        "module": "Diagnóstico",
+        "mode": "diagnostico",
+        "decision": "Importar telemetria e orientar teste sob carga; não confundir clocks reportados e efetivos.",
+        "implementationStatus": "catalogued-not-executable",
+        "evidence": "user-provided-transcript-no-timestamps",
+        "executionAllowed": false
+      },
+      {
+        "id": "video-20",
+        "video": "optimization",
+        "transcriptTopic": "Cinebench e teste de estresse",
+        "existingId": null,
+        "module": "Diagnóstico",
+        "mode": "guia",
+        "decision": "Checklist de teste opcional com ferramenta externa; não iniciar estresse automaticamente.",
+        "implementationStatus": "catalogued-not-executable",
+        "evidence": "user-provided-transcript-no-timestamps",
+        "executionAllowed": false
+      },
+      {
+        "id": "video-21",
+        "video": "optimization",
+        "transcriptTopic": "LatencyMon e DPC ISR",
+        "existingId": null,
+        "module": "Diagnóstico",
+        "mode": "guia",
+        "decision": "Comparar em repouso e durante jogo; driver com pico não prova causa raiz nem mede toda a latência do input.",
+        "implementationStatus": "catalogued-not-executable",
+        "evidence": "user-provided-transcript-no-timestamps",
+        "executionAllowed": false
+      },
+      {
+        "id": "video-22",
+        "video": "optimization",
+        "transcriptTopic": "Polling rate do mouse",
+        "existingId": null,
+        "module": "Jogos → CS2",
+        "mode": "experimental",
+        "decision": "Registrar taxa e comparar alternativas; não impor 2K/4K para todo hardware.",
+        "implementationStatus": "catalogued-not-executable",
+        "evidence": "user-provided-transcript-no-timestamps",
+        "executionAllowed": false
+      },
+      {
+        "id": "video-23",
+        "video": "optimization",
+        "transcriptTopic": "Plano de energia",
+        "existingId": "ultimate-performance-plan",
+        "module": "Otimizações → Desempenho",
+        "mode": "existente",
+        "decision": "Reutilizar ajuste e ampliar seleção para Equilibrado/Alto/Máximo; preservar plano anterior; não forçar Máximo universalmente.",
+        "implementationStatus": "catalogued-not-executable",
+        "evidence": "user-provided-transcript-no-timestamps",
+        "executionAllowed": false
+      },
+      {
+        "id": "video-24",
+        "video": "optimization",
+        "transcriptTopic": "Inicialização rápida",
+        "existingId": "disable-fast-startup",
+        "module": "Otimizações → Geral",
+        "mode": "existente",
+        "decision": "Reutilizar opção existente sem duplicar; estado e reversão verificáveis.",
+        "implementationStatus": "catalogued-not-executable",
+        "evidence": "user-provided-transcript-no-timestamps",
+        "executionAllowed": false
+      },
+      {
+        "id": "video-25",
+        "video": "optimization",
+        "transcriptTopic": "Capturas Game DVR e atalho Game Bar",
+        "existingId": null,
+        "module": "Otimizações → Gaming",
+        "mode": "assistido",
+        "decision": "Separar gravação em segundo plano, atalho e instalação da Game Bar.",
+        "implementationStatus": "catalogued-not-executable",
+        "evidence": "user-provided-transcript-no-timestamps",
+        "executionAllowed": false
+      },
+      {
+        "id": "video-26",
+        "video": "optimization",
+        "transcriptTopic": "Preservar Game Bar no perfil CS2",
+        "existingId": "remove-gaming-apps",
+        "module": "Otimizações → Gaming",
+        "mode": "conflito",
+        "decision": "O app remove Xbox Game Bar/Overlay; vídeo pede preservar. Não remover no perfil CS2; não tratar alegação de requisito do flip como comprovada.",
+        "implementationStatus": "catalogued-not-executable",
+        "evidence": "user-provided-transcript-no-timestamps",
+        "executionAllowed": false
+      },
+      {
+        "id": "video-27",
+        "video": "optimization",
+        "transcriptTopic": "Modo de Jogo",
+        "existingId": "enable-game-mode",
+        "module": "Otimizações → Gaming",
+        "mode": "existente",
+        "decision": "Reutilizar opção existente e permitir teste antes/depois.",
+        "implementationStatus": "catalogued-not-executable",
+        "evidence": "user-provided-transcript-no-timestamps",
+        "executionAllowed": false
+      },
+      {
+        "id": "video-28",
+        "video": "optimization",
+        "transcriptTopic": "HAGS",
+        "existingId": "enable-hags",
+        "module": "Otimizações → GPU",
+        "mode": "conflito",
+        "decision": "App oferece ativação; vídeo prefere desativar. Oferecer Ligado/Desligado/Manter e considerar dependências de geração de quadros.",
+        "implementationStatus": "catalogued-not-executable",
+        "evidence": "user-provided-transcript-no-timestamps",
+        "executionAllowed": false
+      },
+      {
+        "id": "video-29",
+        "video": "optimization",
+        "transcriptTopic": "GPU de alto desempenho por aplicativo",
+        "existingId": null,
+        "module": "Jogos → CS2",
+        "mode": "assistido",
+        "decision": "Selecionar executável correto e abrir preferências gráficas; não confundir com plano de energia.",
+        "implementationStatus": "catalogued-not-executable",
+        "evidence": "user-provided-transcript-no-timestamps",
+        "executionAllowed": false
+      },
+      {
+        "id": "video-30",
+        "video": "optimization",
+        "transcriptTopic": "Otimização de jogos em janela",
+        "existingId": "enable-optimization-for-windowed-games",
+        "module": "Otimizações → Gaming",
+        "mode": "existente",
+        "decision": "Reutilizar ajuste existente; disponibilidade e escopo dependem da versão do Windows e do jogo.",
+        "implementationStatus": "catalogued-not-executable",
+        "evidence": "user-provided-transcript-no-timestamps",
+        "executionAllowed": false
+      },
+      {
+        "id": "video-31",
+        "video": "optimization",
+        "transcriptTopic": "VRR do Windows",
+        "existingId": null,
+        "module": "Jogos → CS2",
+        "mode": "experimental",
+        "decision": "Expor estado e teste opcional; distinguir de G-SYNC/FreeSync e não desativar como regra global.",
+        "implementationStatus": "catalogued-not-executable",
+        "evidence": "user-provided-transcript-no-timestamps",
+        "executionAllowed": false
+      },
+      {
+        "id": "video-32",
+        "video": "optimization",
+        "transcriptTopic": "Overlays NVIDIA AMD Steam Discord",
+        "existingId": null,
+        "module": "Jogos → CS2",
+        "mode": "guia",
+        "decision": "Checklist por aplicativo e por jogo; preservar arquivos de configuração não documentados.",
+        "implementationStatus": "catalogued-not-executable",
+        "evidence": "user-provided-transcript-no-timestamps",
+        "executionAllowed": false
+      },
+      {
+        "id": "video-33",
+        "video": "optimization",
+        "transcriptTopic": "Gravações da Steam",
+        "existingId": null,
+        "module": "Jogos → CS2",
+        "mode": "guia",
+        "decision": "Separar gravação e overlay; orientar preferências do cliente atual.",
+        "implementationStatus": "catalogued-not-executable",
+        "evidence": "user-provided-transcript-no-timestamps",
+        "executionAllowed": false
+      },
+      {
+        "id": "video-34",
+        "video": "optimization",
+        "transcriptTopic": "Downloads Steam durante o jogo",
+        "existingId": null,
+        "module": "Jogos → CS2",
+        "mode": "guia",
+        "decision": "Orientar opção por jogo e alertar sobre conteúdos necessários; escolha do usuário.",
+        "implementationStatus": "catalogued-not-executable",
+        "evidence": "user-provided-transcript-no-timestamps",
+        "executionAllowed": false
+      },
+      {
+        "id": "video-35",
+        "video": "optimization",
+        "transcriptTopic": "Pré-cache de sombreadores Steam",
+        "existingId": null,
+        "module": "Jogos → CS2",
+        "mode": "guia",
+        "decision": "Verificar disponibilidade no cliente e API gráfica; não presumir opção igual em todas as versões.",
+        "implementationStatus": "catalogued-not-executable",
+        "evidence": "user-provided-transcript-no-timestamps",
+        "executionAllowed": false
+      },
+      {
+        "id": "video-36",
+        "video": "optimization",
+        "transcriptTopic": "Discord aceleração e bandeja",
+        "existingId": null,
+        "module": "Jogos → CS2",
+        "mode": "experimental",
+        "decision": "Checklist separado do Rich Presence do otimizador; comparar aceleração ligada/desligada.",
+        "implementationStatus": "catalogued-not-executable",
+        "evidence": "user-provided-transcript-no-timestamps",
+        "executionAllowed": false
+      },
+      {
+        "id": "video-37",
+        "video": "optimization",
+        "transcriptTopic": "Chrome aceleração e segundo plano",
+        "existingId": null,
+        "module": "Otimizações → Aplicativos",
+        "mode": "experimental",
+        "decision": "Não equivale a bloquear apps da Store; orientação opcional somente se navegador permanecer em uso.",
+        "implementationStatus": "catalogued-not-executable",
+        "evidence": "user-provided-transcript-no-timestamps",
+        "executionAllowed": false
+      },
+      {
+        "id": "video-38",
+        "video": "optimization",
+        "transcriptTopic": "Programas de inicialização RGB e telemetria",
+        "existingId": null,
+        "module": "Otimizações → Aplicativos",
+        "mode": "assistido",
+        "decision": "Listar origem e estado; seleção individual e reversão; não desabilitar serviços ou drivers essenciais indiscriminadamente.",
+        "implementationStatus": "catalogued-not-executable",
+        "evidence": "user-provided-transcript-no-timestamps",
+        "executionAllowed": false
+      },
+      {
+        "id": "video-39",
+        "video": "optimization",
+        "transcriptTopic": "CS2 avatares animados",
+        "existingId": null,
+        "module": "Jogos → CS2",
+        "mode": "guia",
+        "decision": "Checklist com detecção futura da configuração da versão instalada.",
+        "implementationStatus": "catalogued-not-executable",
+        "evidence": "user-provided-transcript-no-timestamps",
+        "executionAllowed": false
+      },
+      {
+        "id": "video-40",
+        "video": "optimization",
+        "transcriptTopic": "CS2 pressionar para falar simplificado",
+        "existingId": null,
+        "module": "Jogos → CS2",
+        "mode": "guia",
+        "decision": "Somente se usar push-to-talk; explicar microfone persistentemente aberto ao jogo.",
+        "implementationStatus": "catalogued-not-executable",
+        "evidence": "user-provided-transcript-no-timestamps",
+        "executionAllowed": false
+      },
+      {
+        "id": "video-41",
+        "video": "optimization",
+        "transcriptTopic": "CS2 buffer de pacotes e banda máxima",
+        "existingId": null,
+        "module": "Jogos → CS2",
+        "mode": "experimental",
+        "decision": "Teste A/B separado de otimizar rede Windows; transcrição admite ausência de comprovação; não prometer redução de jitter.",
+        "implementationStatus": "catalogued-not-executable",
+        "evidence": "user-provided-transcript-no-timestamps",
+        "executionAllowed": false
+      },
+      {
+        "id": "video-42",
+        "video": "optimization",
+        "transcriptTopic": "CS2 tela cheia resolução e Hz",
+        "existingId": null,
+        "module": "Jogos → CS2",
+        "mode": "guia",
+        "decision": "Registrar preferência e comparar; usar modo suportado e reversão; não forçar resolução customizada.",
+        "implementationStatus": "catalogued-not-executable",
+        "evidence": "user-provided-transcript-no-timestamps",
+        "executionAllowed": false
+      },
+      {
+        "id": "video-43",
+        "video": "optimization",
+        "transcriptTopic": "CS2 Reflex VSync G-SYNC e FPS cap",
+        "existingId": null,
+        "module": "Jogos → CS2",
+        "mode": "experimental",
+        "decision": "Escolhas dependentes do objetivo e hardware; não fixar fps_max 0 ou Reflex desligado universalmente.",
+        "implementationStatus": "catalogued-not-executable",
+        "evidence": "user-provided-transcript-no-timestamps",
+        "executionAllowed": false
+      },
+      {
+        "id": "video-44",
+        "video": "optimization",
+        "transcriptTopic": "CS2 gráficos sombras FSR MSAA HDR texturas",
+        "existingId": null,
+        "module": "Jogos → CS2",
+        "mode": "guia",
+        "decision": "Perfil proposto editável: base baixa, sombras todas e FSR desligado; listar demais escolhas e preservar configuração anterior.",
+        "implementationStatus": "catalogued-not-executable",
+        "evidence": "user-provided-transcript-no-timestamps",
+        "executionAllowed": false
+      },
+      {
+        "id": "video-45",
+        "video": "optimization",
+        "transcriptTopic": "Teste de gargalo por resolução",
+        "existingId": null,
+        "module": "Diagnóstico",
+        "mode": "diagnostico",
+        "decision": "Comparar cenário repetível e várias passagens; resultado isolado não identifica toda causa.",
+        "implementationStatus": "catalogued-not-executable",
+        "evidence": "user-provided-transcript-no-timestamps",
+        "executionAllowed": false
+      },
+      {
+        "id": "video-46",
+        "video": "optimization",
+        "transcriptTopic": "Perfis NVIDIA e AMD",
+        "existingId": "optimize-nvidia-settings",
+        "module": "Otimizações → GPU",
+        "mode": "conflito",
+        "decision": "App força múltiplos valores globais e máximo desempenho; vídeo usa principalmente padrão. Criar perfil por jogo, editável e reversível.",
+        "implementationStatus": "catalogued-not-executable",
+        "evidence": "user-provided-transcript-no-timestamps",
+        "executionAllowed": false
+      },
+      {
+        "id": "video-47",
+        "video": "optimization",
+        "transcriptTopic": "Fila de frames no Reflex e ajustes AMD",
+        "existingId": null,
+        "module": "Jogos → CS2",
+        "mode": "experimental",
+        "decision": "Transcrição não fornece IDs/nomes completos de várias entradas. Manter como investigação pendente, sem inventar chaves.",
+        "implementationStatus": "catalogued-not-executable",
+        "evidence": "user-provided-transcript-no-timestamps",
+        "executionAllowed": false
+      },
+      {
+        "id": "video-48",
+        "video": "optimization",
+        "transcriptTopic": "Monitor resolução Hz EDID e monitor principal",
+        "existingId": null,
+        "module": "Diagnóstico",
+        "mode": "guia",
+        "decision": "Inventariar modos suportados e comparar com jogo; Windows e painel do driver não são por si conflitantes.",
+        "implementationStatus": "catalogued-not-executable",
+        "evidence": "user-provided-transcript-no-timestamps",
+        "executionAllowed": false
+      },
+      {
+        "id": "video-49",
+        "video": "optimization",
+        "transcriptTopic": "CRU reset e resoluções personalizadas",
+        "existingId": null,
+        "module": "Diagnóstico",
+        "mode": "guia",
+        "decision": "Recurso manual avançado com recuperação de vídeo; não resetar EDID automaticamente.",
+        "implementationStatus": "catalogued-not-executable",
+        "evidence": "user-provided-transcript-no-timestamps",
+        "executionAllowed": false
+      },
+      {
+        "id": "video-50",
+        "video": "optimization",
+        "transcriptTopic": "Escalonamento tela inteira vídeo GPU",
+        "existingId": null,
+        "module": "Jogos → CS2",
+        "mode": "experimental",
+        "decision": "Checklist por monitor e preferência; não afirmar etapa extra e latência como resultado universal.",
+        "implementationStatus": "catalogued-not-executable",
+        "evidence": "user-provided-transcript-no-timestamps",
+        "executionAllowed": false
+      },
+      {
+        "id": "video-51",
+        "video": "optimization",
+        "transcriptTopic": "PresentMon modos de apresentação",
+        "existingId": null,
+        "module": "Diagnóstico",
+        "mode": "diagnostico",
+        "decision": "Importar CSV e apresentar distribuição dos modos sem confundir Independent Flip composto com falha.",
+        "implementationStatus": "catalogued-not-executable",
+        "evidence": "user-provided-transcript-no-timestamps",
+        "executionAllowed": false
+      },
+      {
+        "id": "video-52",
+        "video": "optimization",
+        "transcriptTopic": "Afterburner limites GPU temperatura e energia",
+        "existingId": null,
+        "module": "Diagnóstico",
+        "mode": "diagnostico",
+        "decision": "Importar telemetria quando disponível; correlacionar com frametimes, sem atribuir causalidade automaticamente.",
+        "implementationStatus": "catalogued-not-executable",
+        "evidence": "user-provided-transcript-no-timestamps",
+        "executionAllowed": false
+      },
+      {
+        "id": "video-53",
+        "video": "optimization",
+        "transcriptTopic": "Undervolt PBO overclock",
+        "existingId": null,
+        "module": "Diagnóstico",
+        "mode": "guia",
+        "decision": "Orientação e diagnóstico; nenhum ajuste automático de tensão ou frequência.",
+        "implementationStatus": "catalogued-not-executable",
+        "evidence": "user-provided-transcript-no-timestamps",
+        "executionAllowed": false
+      },
+      {
+        "id": "video-54",
+        "video": "mitigation",
+        "transcriptTopic": "Mitigações consultar estado",
+        "existingId": null,
+        "module": "Segurança avançada",
+        "mode": "diagnostico",
+        "decision": "Separar valores configurados e proteção efetiva; desconhecido se não houver verificação do kernel.",
+        "implementationStatus": "catalogued-not-executable",
+        "evidence": "user-provided-transcript-no-timestamps",
+        "executionAllowed": false
+      },
+      {
+        "id": "video-55",
+        "video": "mitigation",
+        "transcriptTopic": "Mitigações backup e restauração",
+        "existingId": null,
+        "module": "Segurança avançada",
+        "mode": "assistido",
+        "decision": "Backups íntegros por valor com existência e tipo; restaurar e voltar ao padrão são ações diferentes.",
+        "implementationStatus": "catalogued-not-executable",
+        "evidence": "user-provided-transcript-no-timestamps",
+        "executionAllowed": false
+      },
+      {
+        "id": "video-56",
+        "video": "mitigation",
+        "transcriptTopic": "Mitigações selecionar perfil e desligar-tudo",
+        "existingId": null,
+        "module": "Segurança avançada",
+        "mode": "experimental",
+        "decision": "Manter os 12 perfis do script; compatibilidade por fabricante; segurança reduzida explícita, fora de otimização automática.",
+        "implementationStatus": "catalogued-not-executable",
+        "evidence": "user-provided-transcript-no-timestamps",
+        "executionAllowed": false
+      },
+      {
+        "id": "video-57",
+        "video": "mitigation",
+        "transcriptTopic": "Mitigações reiniciar e verificar",
+        "existingId": null,
+        "module": "Segurança avançada",
+        "mode": "assistido",
+        "decision": "Não reiniciar automaticamente; marcar pendência e verificar novamente depois; não afirmar desligamento universal.",
+        "implementationStatus": "catalogued-not-executable",
+        "evidence": "user-provided-transcript-no-timestamps",
+        "executionAllowed": false
+      },
+      {
+        "id": "video-58",
+        "video": "both",
+        "transcriptTopic": "Comparação antes/depois FPS 1% lows e frametime",
+        "existingId": null,
+        "module": "Diagnóstico",
+        "mode": "diagnostico",
+        "decision": "Capturas repetíveis com mesma metodologia, cena e aquecimento de shaders; microbenchmarks não provam ganhos no jogo.",
+        "implementationStatus": "catalogued-not-executable",
+        "evidence": "user-provided-transcript-no-timestamps",
+        "executionAllowed": false
+      }
+    ]
+  },
+  "scriptSha256": "434c405822fdafe6e7c467517c3b4591c513925d66b99a90dddec3607655d2f5"
+}

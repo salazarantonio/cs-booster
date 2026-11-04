@@ -1,0 +1,12 @@
+import { promises as fs } from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
+const destination = path.join(root,'release','CS Booster');
+await fs.mkdir(destination,{recursive:true});
+await fs.cp(path.join(root,'node_modules/electron/dist'),destination,{recursive:true});
+const appDir = path.join(destination,'resources/app');
+await fs.mkdir(appDir,{recursive:true});
+for(const entry of ['main.mjs','preload.cjs','package.json','renderer','lib']) await fs.cp(path.join(root,entry),path.join(appDir,entry),{recursive:true});
+await fs.rename(path.join(destination,'electron.exe'),path.join(destination,'CS Booster.exe'));
+console.log(destination);
