@@ -12,7 +12,8 @@
 - Plano de energia máximo com restauração do plano anterior.
 - Copilot e menu de contexto com compatibilidade/reversão verificadas.
 - Serviços em Manual somente após definir lista explícita, dependências e estados anteriores.
-- Limpeza seletiva de caches com validação de caminhos, arquivos em uso e medição prévia.
+- Ampliar a limpeza para caches de shaders DirectX/GPU/Steam; as cinco opções de limpeza do sistema foram implementadas na 0.3.
+- Validar a limpeza do sistema em Windows de testes com arquivos bloqueados, permissões e volumes distintos.
 - Backup/recuperação de configurações e cache CS2 por conta Steam.
 
 ## Depois

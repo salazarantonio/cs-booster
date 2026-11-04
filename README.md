@@ -1,6 +1,6 @@
 # CS Booster
 
-Aplicativo desktop Windows para diagnóstico e ajustes individuais voltados a jogos competitivos. Versão de desenvolvimento 0.2.0.
+Aplicativo desktop Windows para diagnóstico e ajustes individuais voltados a jogos competitivos. Versão de desenvolvimento 0.3.0.
 
 ## Estado atual
 
@@ -12,7 +12,7 @@ Aplicativo desktop Windows para diagnóstico e ajustes individuais voltados a jo
 - Debloat seletivo de aplicativos da conta atual, com confirmação individual da seleção.
 - Seis recomendações com estrelas, filtro e categorias por cartão.
 
-Limpeza de caches, ajustes avançados de GPU, gerenciador de instalações e pontos de restauração completos ainda estão em desenvolvimento. A alternativa Raphire Win11Debloat é apresentada como orientação, sem download ou execução automática. Não há promessa de ganho de FPS.
+Limpeza do sistema disponível com seleção individual das cinco categorias da referência. Ajustes avançados de GPU, gerenciador de instalações e pontos de restauração completos ainda estão em desenvolvimento. A alternativa Raphire Win11Debloat é apresentada como orientação, sem download ou execução automática. Não há promessa de ganho de FPS.
 
 ## Desenvolvimento
 
@@ -34,7 +34,7 @@ Dados, logs e backups ficam em data/settings no modo de desenvolvimento e junto 
 
 ## Validação e limitações
 
-33 testes de unidade passaram, incluindo registro simulado, backup e restauração exata, recusa de destinos não autorizados e cálculo de frametime. A interface foi verificada pela prévia local. A abertura do Electron neste ambiente de desenvolvimento encerrou antes de exibir a janela com o código 0x80000003; a validação do pacote desktop ainda está pendente.
+57 testes foram executados: 56 aprovados e um ignorado porque o ambiente bloqueou a criação de junction. Incluem registro simulado, restauração exata, cálculo de frametime, oito testes da interface de limpeza e o executor PowerShell real contra arquivos sintéticos isolados. A interface foi verificada pela prévia local. A abertura do Electron neste ambiente de desenvolvimento encerrou antes de exibir a janela com o código 0x80000003; a validação do pacote desktop ainda está pendente.
 
 As consultas CIM podem ser negadas pelo Windows; nesse caso o painel preserva os dados disponíveis e indica os demais como desconhecidos. Nenhum ajuste real foi aplicado ao computador durante o desenvolvimento.
 
@@ -61,3 +61,18 @@ Antes da remoção, a lista é novamente validada e um relatório é salvo. O re
 ## Limites desta revisão
 
 Aplicação real das mitigações e remoção real de aplicativos não foram executadas. As operações de escrita foram verificadas por testes simulados; a consulta AppX no ambiente retornou acesso negado. A prévia verificou seis recomendações, categorias, escolha do método de debloat, presença do perfil desligar-tudo e bloqueio de aplicação sem administrador. A abertura do pacote Electron e testes Windows completos ainda precisam de validação em ambiente adequado.
+
+
+## Limpeza do sistema
+
+As cinco opções são temporários, Prefetch, Lixeira da conta atual, downloads do Windows Update e miniaturas. Nenhuma vem selecionada. A exclusão é permanente, exige confirmação e a Lixeira exige uma confirmação adicional. Caches podem ser reconstruídos pelo Windows; limpar Prefetch pode tornar aberturas iniciais mais lentas.
+
+Os destinos são definidos no backend; a interface só envia identificadores conhecidos. O executor verifica caminhos e recusa pontos de redirecionamento, limita o inventário e não usa exclusão recursiva nativa. A checagem por caminho não é atômica contra trocas maliciosas concorrentes de diretórios. Arquivos bloqueados são informados como ignorados. Bytes excluídos são contagens de arquivos removidos, não promessa de espaço físico liberado no disco.
+
+Sem administrador, os temporários ficam limitados à conta atual. Prefetch e downloads do Windows Update exigem administrador. O cache do Windows Update permanece indisponível enquanto Windows Update/BITS estiverem ativos ou seu estado não puder ser verificado; o aplicativo não interrompe serviços. O Explorer também não é encerrado para forçar a remoção de miniaturas bloqueadas.
+
+A última tentativa e a última limpeza totalmente concluída são registradas separadamente. Falhas parciais e interrupções não viram mensagens de sucesso. A prévia web continua somente leitura; a execução pertence ao aplicativo desktop. Os caches de shaders DirectX/NVIDIA/Steam dos vídeos permanecem uma entrega separada.
+
+Veja [o relatório de investigação](CLEANUP-ANALYSIS.md) para a evidência e os limites da correspondência com o aplicativo de referência.
+
+Validação da limpeza 0.3: 56 testes aprovados, nenhuma falha e um teste de junction ignorado. Nenhuma pasta real de temporários, Prefetch, Lixeira, Windows Update ou miniaturas foi limpa como teste. A abertura do pacote desktop continua pendente de validação fora deste ambiente.
