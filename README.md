@@ -34,7 +34,7 @@ Dados, logs e backups ficam em data/settings no modo de desenvolvimento e junto 
 
 ## Validação e limitações
 
-68 testes foram executados: 67 aprovados e um ignorado porque o ambiente bloqueou a criação de junction. Incluem registro simulado, restauração exata, cálculo de frametime, nove testes da interface de limpeza e o executor PowerShell real contra arquivos sintéticos isolados. A interface foi verificada pela prévia local. A abertura do Electron neste ambiente de desenvolvimento encerrou antes de exibir a janela com o código 0x80000003; a validação do pacote desktop ainda está pendente.
+68 testes foram executados: 67 aprovados e um ignorado porque o ambiente bloqueou a criação de junction. Incluem registro simulado, restauração exata, cálculo de frametime, nove testes da interface de limpeza e o executor PowerShell real contra arquivos sintéticos isolados. A interface foi verificada pela prévia local. A abertura do Electron neste ambiente de desenvolvimento encerrou antes de exibir a janela com o código 0x80000003; a abertura manual após a correção ESM foi confirmada; o teste funcional da interface com adaptadores simulados também passou.
 
 As consultas CIM podem ser negadas pelo Windows; nesse caso o painel preserva os dados disponíveis e indica os demais como desconhecidos. Nenhum ajuste real foi aplicado ao computador durante o desenvolvimento.
 
@@ -75,12 +75,12 @@ A última tentativa e a última limpeza totalmente concluída são registradas s
 
 Veja [o relatório de investigação](CLEANUP-ANALYSIS.md) para a evidência e os limites da correspondência com o aplicativo de referência.
 
-Validação da versão 0.3.1: 67 testes aprovados, nenhuma falha e um teste de junction ignorado. Nenhuma pasta real de temporários, Prefetch, Lixeira, Windows Update ou miniaturas foi limpa como teste. A abertura do pacote desktop continua pendente de validação fora deste ambiente.
+Validação da versão 0.3.1: 67 testes aprovados, nenhuma falha e um teste de junction ignorado. Nenhuma pasta real de temporários, Prefetch, Lixeira, Windows Update ou miniaturas foi limpa como teste. A abertura manual do pacote foi confirmada; o teste funcional da interface passou com adaptadores simulados. Operações reais continuam pendentes.
 
 
 ## Validação desktop e diagnóstico de abertura
 
-Consulte [VALIDATION.md](VALIDATION.md) para os resultados reais e os limites da validação. O encerramento `0x80000003` ainda impede aprovar a abertura desktop. A consistência do pacote e os testes de lógica não substituem essa aprovação.
+Consulte [VALIDATION.md](VALIDATION.md) para os resultados reais e os limites da validação. O encerramento `0x80000003` foi observado na automação, enquanto o bloqueio de inicialização ESM encontrado no aplicativo foi corrigido. O usuário confirmou a abertura manual do pacote. Navegação, cancelamentos e operações reais têm validações próprias; a abertura não equivale à aprovação de todas elas.
 
 O iniciador normal salva um relatório local em `evidence/desktop-launch.json` e mantém a mensagem de erro visível se houver falha. Não precisa de administrador. Feche o aplicativo antes de gerar um novo pacote.
 
@@ -89,3 +89,5 @@ O iniciador normal salva um relatório local em `evidence/desktop-launch.json` e
 A inicialização também registra etapas em `release/CS Booster/resources/app/data/startup.jsonl`. O perfil portátil é definido antes da trava de instância única. O iniciador preserva a mensagem de encerramento precoce mesmo com código zero.
 
 O bloqueio da entrada ESM ao aguardar prontidão foi corrigido: o módulo principal agora termina de carregar antes da criação assíncrona da janela. Para validar a interface com registro e PowerShell simulados pelo Windows normal, use `Validar interface.cmd`. Esse teste não executa otimizações reais e recusa relatórios antigos como prova de sucesso.
+
+Validação desktop concluída para abertura e interface: nove módulos, 29 ajustes no catálogo, oito opções de limpeza, filtros, cancelamentos, isolamento e comparação por IPC. O relatório confirmou zero escritas de registro e zero execuções de limpeza. A próxima etapa são operações reais em Windows de testes, com aplicação e restauração verificadas.

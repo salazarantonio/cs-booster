@@ -7,8 +7,8 @@
 - Removida a espera por prontidão no nível principal ESM, que bloqueava a inicialização; teste de regressão e iniciador de validação com adaptadores simulados.
 - Perfil portátil configurado antes da trava de instância única; etapas de inicialização registradas e sete testes da lógica desktop de produção.
 - Conferência SHA-256 dos arquivos do runtime e da aplicação no pacote portátil.
-- Teste funcional desktop ampliado, ainda bloqueado pela falha de inicialização do Electron.
-- Versão do painel corrigida; 68 testes de lógica/fixtures: 67 aprovados e um ignorado. Abertura desktop ainda não aprovada.
+- Teste funcional desktop aprovado no Windows normal: nove rotas, filtros, cancelamentos, isolamento e IPC com adaptadores simulados.
+- Versão do painel corrigida; 68 testes de lógica/fixtures: 67 aprovados e um ignorado. Abertura desktop e teste funcional da interface aprovados no Windows normal; operações reais ainda pendentes.
 
 ## 0.3.1 — 2026-11-04
 

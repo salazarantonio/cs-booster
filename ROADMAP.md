@@ -2,7 +2,7 @@
 
 ## Prioridade imediata
 
-- Resolver a inicialização gráfica do Electron (`0x80000003`), comparando com a abertura manual pelo iniciador atualizado. Estado detalhado em VALIDATION.md.
+- Validar operações reais em Windows de testes. A abertura manual e o teste funcional da interface com adaptadores simulados estão aprovados; detalhes em VALIDATION.md.
 - Validar aplicação/restauração em Windows de testes com administrador, sem usar o computador principal como experimento.
 - Validar o inventário e remoção AppX em Windows compatível e revisar efeitos dos componentes Xbox no uso de Game Pass.
 - Adicionar verificação do estado efetivo das mitigações no kernel, separada do registro.
@@ -37,11 +37,11 @@ Recomendação de catálogo não significa executor pronto. As próximas versõe
 | Diagnóstico | Comparação A/B de JSON normalizado com FPS, 1% low e P99 | Importação direta de PresentMon, coleta de métricas e medições repetíveis |
 | Restauração | Backups dos valores modificados pelo aplicativo | Pontos completos de restauração do Windows e recuperação dos demais módulos |
 | Aplicativos | Catálogo de ferramentas e debloat separado | Instalação/desinstalação geral e importação/exportação de seleção |
-| Distribuição | Código no GitHub e pacote portátil local | Validar janela Electron, instalador, assinatura e atualização |
+| Distribuição | Código no GitHub e pacote portátil local | Abertura e interface Electron aprovadas; faltam instalador, assinatura, atualização e compatibilidade ampliada |
 | Investigação original | Interface e recursos empacotados examinados | Concluir Ghidra além dos limites de tempo e recuperar a lógica original não confirmada |
 
 As quatro recomendações ainda pendentes são **plano de energia máximo, Copilot, menu de contexto clássico e serviços em Manual**. Limpar Windows e Finalizar Tarefa com botão direito já têm executor.
 
 Os outros 18 ajustes pendentes são: BSOD detalhado; apps Store em segundo plano; isolamento do núcleo; proteção em tempo real do Defender; inicialização rápida; localização; dicas da tela de bloqueio; Wi-Fi Sense; HAGS; otimização de jogos em janela; rede; NVIDIA; remoção de apps de jogos como ação própria; OneDrive; utilitário Limpeza de Disco; PowerShell 7 padrão; UTC; prioridade Win32. A presença no catálogo não significa que estejam disponíveis ou recomendados para toda máquina.
 
-Ordem sugerida: validar o aplicativo desktop e seus fluxos em Windows de testes; implementar as quatro recomendações restantes com recuperação do estado anterior; concluir Steam/CS2 e shaders; ampliar diagnóstico e distribuição. A comparação de FPS depende de medições repetidas e não é substituída por uma indicação de ajuste ativo.
+Ordem sugerida: validar aplicação e restauração reais em Windows de testes (abertura e interface já aprovadas); implementar as quatro recomendações restantes com recuperação do estado anterior; concluir Steam/CS2 e shaders; ampliar diagnóstico e distribuição. A comparação de FPS depende de medições repetidas e não é substituída por uma indicação de ajuste ativo.
