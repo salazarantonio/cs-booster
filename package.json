@@ -7,9 +7,11 @@
   "main": "main.mjs",
   "scripts": {
     "start": "electron .",
-    "test": "node --test lib/*.test.mjs lib/core/*.test.mjs scripts/renderer-cleanup.test.mjs",
+    "test": "node --test lib/*.test.mjs lib/core/*.test.mjs scripts/*.test.mjs",
     "package": "node scripts/package.mjs",
-    "preview": "node scripts/preview.mjs"
+    "preview": "node scripts/preview.mjs",
+    "validate:package": "node scripts/validate-package.mjs",
+    "validate:desktop": "electron scripts/smoke.mjs"
   },
   "devDependencies": {
     "electron": "45.2.2"

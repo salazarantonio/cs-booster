@@ -1,8 +1,4 @@
 @echo off
 cd /d "%~dp0"
-if exist "release\CS Booster\CS Booster.exe" (
-  start "" "release\CS Booster\CS Booster.exe"
-) else (
-  echo Execute npm install e npm start nesta pasta para iniciar o projeto.
-  pause
-)
+powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -File "%~dp0scripts\launch-desktop.ps1"
+if errorlevel 1 pause

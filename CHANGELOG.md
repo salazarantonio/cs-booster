@@ -1,5 +1,15 @@
 # Histórico
 
+## Validação da 0.3.1 — 2026-11-04
+
+- Corrigido o empacotamento repetido para montar uma pasta nova, preservar dados e arquivar o pacote anterior; teste de recuperação após falha de publicação.
+- Iniciador normal com relatório local e mensagem de falha, inclusive saída zero precoce, sem exigir administrador.
+- Removida a espera por prontidão no nível principal ESM, que bloqueava a inicialização; teste de regressão e iniciador de validação com adaptadores simulados.
+- Perfil portátil configurado antes da trava de instância única; etapas de inicialização registradas e sete testes da lógica desktop de produção.
+- Conferência SHA-256 dos arquivos do runtime e da aplicação no pacote portátil.
+- Teste funcional desktop ampliado, ainda bloqueado pela falha de inicialização do Electron.
+- Versão do painel corrigida; 68 testes de lógica/fixtures: 67 aprovados e um ignorado. Abertura desktop ainda não aprovada.
+
 ## 0.3.1 — 2026-11-04
 
 - Corrigida a substituição indevida da lista da 0.2: DirectX, NVIDIA DirectX e NVIDIA OpenGL voltam junto às cinco limpezas da 0.3.
