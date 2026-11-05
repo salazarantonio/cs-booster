@@ -16,7 +16,7 @@ $taskVolume=[IO.DriveInfo]::new([IO.Path]::GetPathRoot($taskBase))
 if ($taskVolume.AvailableFreeSpace -lt 100GB) { throw 'Reserve pelo menos 100 GB livres para disco, ISO e snapshots.' }
 if ($PSCmdlet.ShouldProcess($taskFolder,'Criar VM desligada com disco virtual dinamico de 80 GB')) {
     Invoke-LabVBox -VBoxArguments @('createvm','--name',$taskName,'--platform-architecture','x86','--ostype','Windows11_64','--basefolder',$taskBase,'--register')
-    Invoke-LabVBox -VBoxArguments @('modifyvm',$taskName,'--memory','4096','--cpus','3','--firmware','efi','--tpm-type','2.0','--ioapic','on','--graphicscontroller','vboxsvga','--vram','128','--accelerate-3d','off','--clipboard-mode','disabled','--drag-and-drop','disabled','--nic1','none','--usb-ohci','off','--usb-ehci','off','--usb-xhci','off','--audio-enabled','off','--boot1','dvd','--boot2','disk')
+    Invoke-LabVBox -VBoxArguments @('modifyvm',$taskName,'--memory','4096','--cpus','3','--firmware','efi','--tpm-type','2.0','--ioapic','on','--graphicscontroller','vboxsvga','--vram','128','--accelerate-3d','off','--clipboard-mode','disabled','--drag-and-drop','disabled','--nic1','none','--usb-ohci','off','--usb-ehci','off','--usb-xhci','on','--mouse','usbtablet','--audio-enabled','off','--boot1','dvd','--boot2','disk')
     Invoke-LabVBox -VBoxArguments @('createmedium','disk','--filename',$taskDisk,'--size','81920','--format','VDI','--variant','Standard')
     Invoke-LabVBox -VBoxArguments @('storagectl',$taskName,'--name','SATA','--add','sata','--controller','IntelAhci')
     Invoke-LabVBox -VBoxArguments @('storageattach',$taskName,'--storagectl','SATA','--port','0','--device','0','--type','hdd','--medium',$taskDisk)
