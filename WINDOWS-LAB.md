@@ -1,6 +1,6 @@
 # Laboratório Windows para validação real
 
-Estado: preparação. VirtualBox 7.2.22 instalado após autorização; instalador oficial com assinatura válida da Oracle e SHA-256 conferido. A criação da VM desligada foi executada e a configuração foi consultada com sucesso. Um teste de inicialização do firmware, ainda sem Windows, iniciou com 512 MB; a VM foi desligada e voltou à configuração de 4 GB. Isso não comprova funcionamento do Windows convidado. A ISO oficial está em conferência; instalação e recuperação do Windows convidado ainda pendentes. A interface 0.3.2 passou com adaptadores simulados; os testes abaixo ainda não passaram em um Windows convidado. Nenhum resultado de FPS é inferido desta etapa.
+Estado: preparação. VirtualBox 7.2.22 instalado após autorização; instalador oficial com assinatura válida da Oracle e SHA-256 conferido. A criação da VM desligada foi executada e a configuração foi consultada com sucesso. Um teste de inicialização do firmware, ainda sem Windows, iniciou com 512 MB; a VM foi desligada e voltou à configuração de 4 GB. Isso não comprova funcionamento do Windows convidado. A ISO oficial pt-BR x64 foi conferida pelo SHA-256 publicado pela Microsoft e conectada à unidade de DVD virtual. A instalação ficou adiada até haver memória disponível no host; o Windows convidado, o snapshot de base e as operações reais ainda não foram validados. A interface 0.3.2 passou com adaptadores simulados; os testes abaixo ainda não passaram em um Windows convidado. Nenhum resultado de FPS é inferido desta etapa.
 
 ## Ambiente
 
