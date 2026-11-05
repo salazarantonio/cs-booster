@@ -47,4 +47,6 @@ Os outros 18 ajustes pendentes são: BSOD detalhado; apps Store em segundo plano
 Ordem sugerida: validar aplicação e restauração reais em Windows de testes (abertura e interface já aprovadas); implementar as quatro recomendações restantes com recuperação do estado anterior; concluir Steam/CS2 e shaders; ampliar diagnóstico e distribuição. A comparação de FPS depende de medições repetidas e não é substituída por uma indicação de ajuste ativo.
 
 
-Na 0.3.2, a navegação ganhou cache temporário e eliminação de consultas repetidas. A prévia e os testes de lógica passaram; falta confirmar o novo teste desktop no Windows normal. Isso não substitui a etapa seguinte de aplicação/restauração reais em Windows de testes.
+Na 0.3.2, a navegação ganhou cache temporário e eliminação de consultas repetidas. A prévia, os testes de lógica e o novo teste desktop no Windows normal passaram. Isso não substitui a etapa seguinte de aplicação/restauração reais em Windows de testes.
+
+O laboratório persistente está em preparação: VirtualBox instalado e VM nova criada desligada; instalação do Windows, snapshot de base e testes reais ainda pendentes. Roteiro e critérios em WINDOWS-LAB.md.

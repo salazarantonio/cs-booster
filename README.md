@@ -102,3 +102,5 @@ A leitura dos estados passou de nove processos PowerShell para uma consulta agru
 A [comparação com o TogsBoost](NAVIGATION-ANALYSIS.md) apresenta os trechos examinados com REA, a tentativa de Ghidra e os limites da conclusão. A suíte atual tem 84 testes: 83 aprovados e uma omissão conhecida. A prévia da 0.3.2 foi conferida; a aprovação desktop da 0.3.1 permanece histórica e não substitui um novo relatório da 0.3.2.
 
 Validação desktop da 0.3.2 aprovada: retorno recente sem consultas extras, formulário preservado e atualização explícita verificados com adaptadores simulados. Nenhuma alteração real do Windows foi executada.
+
+O roteiro da próxima etapa está em [WINDOWS-LAB.md](WINDOWS-LAB.md): laboratório persistente e critérios para validar aplicação, verificação e restauração reais. Preparar o laboratório não significa aprovar essas operações.
